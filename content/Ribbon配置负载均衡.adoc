@@ -1,0 +1,8 @@
+
+
+====== Ribbon配置负载均衡
+
+
+. RestTemplate配置上加@LoadBalanced
+. 并在配置文件为指定服务id配置LoadBalancedRuleClassName来选择负载均衡策略
+如随机访问RandomRule

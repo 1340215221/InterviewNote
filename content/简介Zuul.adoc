@@ -1,0 +1,16 @@
+
+
+====== 简介Zuul
+
+
+.功能
+. API网关
+. 请求路由
+
+
+.使用
+. 配置匹配请求地址和转发地址 +
+zuul.routes.<route>.path
+zuul.routes.<route>.serviceId
+. 启动类增加 +
+@EnableZuulProxy

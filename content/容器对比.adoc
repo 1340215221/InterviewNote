@@ -1,0 +1,14 @@
+
+
+==== 容器对比
+
+
+.List
+. 常见的有ArrayList,
+
+
+
+.Set
+. 常见的有HashSet, TreeSet
+. 无序
+. 元素唯一

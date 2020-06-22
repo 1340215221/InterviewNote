@@ -1,0 +1,17 @@
+
+
+====== Eureka注册中心
+
+
+. 配置要注册到的服务端地址
+.. http://域名或IP地址:端口号/应用名/
+单机版注册到自身服务 +
+service-url default-zone
+.. 启动类添加@EnableEurekaServer
+. 服务提供方
+.. 配置要注册到的服务端地址
+.. 启动类上添加@EnableEurekaClient
+. 服务消费方
+.. 配置要注册到服务地址
+.. 启动类要添加@EnableDiscoveryClient
+.. Java配置RestTemplate, 并在配置方法上添加@LoadBalanced

@@ -1,0 +1,18 @@
+
+
+=== 虚拟机
+
+
+include::/home/hang/Documents/Java-not/content/内存模型.adoc[]
+
+include::/home/hang/Documents/Java-not/content/多线程并发问题.adoc[]
+
+include::/home/hang/Documents/Java-not/content/垃圾回收.adoc[]
+
+include::/home/hang/Documents/Java-not/content/内存溢出问题.adoc[]
+
+include::/home/hang/Documents/Java-not/content/JVM调优.adoc[]
+
+include::/home/hang/Documents/Java-not/content/类的加载.adoc[]
+
+include::/home/hang/Documents/Java-not/content/对象的创建.adoc[]

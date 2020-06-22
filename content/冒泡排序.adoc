@@ -1,0 +1,25 @@
+
+
+===== 冒泡排序
+
+
+是将大的向后移, 小的向前移. 
+比较相邻两个元素, 如果前一个比后面一个大, 则前后元素互换位置.
+一趟排序后, 最大的元素一定在最后面.
+
+
+
+[source,java]
+----
+    public static void bubbleSort(int arr[]) {
+        for(int i =0 ; i<arr.length-1 ; i++) {
+            for(int j=0 ; j<arr.length-1-i ; j++) {
+                if(arr[j]>arr[j+1]) {  // 当前元素如果比后面一个元素大
+                    int temp = arr[j]; // 元素互换位置
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+               }
+            }    
+        }
+    }
+----

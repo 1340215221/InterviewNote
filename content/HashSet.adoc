@@ -1,0 +1,9 @@
+
+
+==== HashSet
+
+
+. HashSet是通过HashMap实现的
+. HashSet的成员变量中有一个HashMap, 一个静态成员变量Object.
+在add()方法中, 将要添加的元素作为key, 将object作为value, 添加到map中
+. 无序, 线程不安全, 允许空值, 元素唯一

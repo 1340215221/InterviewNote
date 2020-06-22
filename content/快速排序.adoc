@@ -1,0 +1,43 @@
+
+
+===== 快速排序
+
+
+设置一个分割值, 将所有小于分割值的元素移动到左边,
+将所有大于分割值的元素移动到右边.
+然后再对左边和右边区域重复上述操作, 直到每个区域只有一个元素.
+可以取每个区域的第一个元素值作为分割值. +
+每个区域比较逻辑: +
+从区域的左边向中间开始查找, 直到找到一个大于等于分割值的元素.
+从区域的右边向中间开始查找, 直到找到一个小于等于分割值的元素.
+查找时保证左边指针的索引要小于右边的.
+如果左边找到的元素值等于右边找到的元素值, 则将左边的指针向中间移动一位,
+否则将两个元素交换位置.
+
+
+[source,java]
+----
+static int[] qsort(int[] arr, int start, int end) {
+        int pivot = arr[start]
+        int i = start
+        int j = end
+        while (i < j) {
+            while ((i < j) && (arr[j] > pivot)) {
+                j--
+            }
+            while ((i < j) && (arr[i] < pivot)) {
+                i++
+            }
+            if ((arr[i] == arr[j]) && (i < j)) {
+                i++
+            } else {
+                int temp = arr[i]
+                arr[i] = arr[j]
+                arr[j] = temp
+            }
+        }
+        if (i - 1 > start) arr = qsort(arr, start, i - 1)
+        if (j + 1 < end) arr = qsort(arr, j + 1, end)
+        return (arr)
+    }
+----

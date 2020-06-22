@@ -1,0 +1,10 @@
+
+
+==== 线程通讯方式
+
+
+. synchronized配合wait和notify
+. ReentrantLock配合Condition
+. 闭锁
+. 栅栏
+. 信号量

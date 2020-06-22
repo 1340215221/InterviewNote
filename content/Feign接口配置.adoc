@@ -1,0 +1,8 @@
+
+
+====== Feign接口配置
+
+
+. 通过@FeignClient定义服务提供者的服务名
+. 可以使用 _@RequestMapping/@PathVarible_ 定义映射路径
+. 在启动类上添加@EnableFeignClients定义feign接口的扫描路径

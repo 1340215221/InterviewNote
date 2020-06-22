@@ -1,0 +1,32 @@
+
+
+====== 反向代理
+
+
+.什么是反向代理?
+客户端向代理服务器发送请求, 代理服务器路由请求到服务端.
+过程中由代理服务器决定要路由的服务端地址. 反向代理是对服务端的代理
+
+
+.配置
+. 在server.location块中添加proxy_pass, value为服务器url或upstream分组名
+.
+a+
+
+.代码示例
+[source,js]
+----
+upstream xxx-appl {
+    server 192.168.38.37:80 weight=1 fail_timeout=5s max_fails=3;
+    server 192.168.38.47:81 weight=1 fail_timeout=5s max_fails=3;
+}
+
+server {
+    listen 80;
+    server_name www.xxxpc.net;
+    location / {
+        index index.html;
+        proxy_pass http://xxx-appl;
+    }
+}
+----

@@ -1,0 +1,25 @@
+
+
+===== 插入排序
+
+
+类似于扑克牌抽牌时整理排序.
+重新从数组中顺序抽一遍元素, 每抽一个都与前面抽过的牌做比较.
+从抽取位置开始, 如果前一个比当前抽的大, 将前一个向后移动一位.
+如果前一个小于当前抽的, 将抽的放到前一个后面.
+
+
+[source.java]
+----
+static void sort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int j = i
+            int temp = arr[i]
+            while (j > 0 && temp < arr[j - 1]) {
+                arr[j] = arr[j-1]
+                j--
+            }
+            arr[j] = temp
+        }
+    }
+----

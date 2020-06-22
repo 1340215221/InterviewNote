@@ -1,0 +1,8 @@
+
+
+==== ConcurrentHashMap
+
+
+. 底层是由多个Segment组成的, 每个Segment通过加锁保证了线程安全,
+锁的粒度更细性能更高
+. ConcurrentHashMap不允许null的key和value

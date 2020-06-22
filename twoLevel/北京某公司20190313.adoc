@@ -1,0 +1,19 @@
+
+
+=== 北京某公司20190313
+
+
+. new String("aaa")在堆栈中存放位置? +
+与"aaa"用==对比相等吗
+.. 在堆栈里面
+. Vim常用命令
+.. i编辑, a在光标后编辑, o换行, dd删除一行, yy复制一行, p粘贴
+.. 冒号 命令模式, q退出, w保存, !强制操作
+.. 反斜杠 查找模式, n向下查找, N向上查找
+. 用tomcat打war包
+. 查看端口状态 +
+开启端口
+.. netstat -tunlp |grep 端口号
+... 如, netstat -tunlp |grep 3306
+.. firewall-cmd --zone=public --add-port=80/tcp --permanent
+... permanent为永久开启

@@ -1,0 +1,222 @@
+
+= Java笔记
+Doc 阮航 <doc.writer@asciidoctor.org>
+v1.0, 2013-08-01
+:doctype: book
+:toc: left
+:imagesdir: assets/images
+:homepage: https://asciidoctor.org
+:sectnums:
+:toclevels: 6
+
+
+== Java基础
+
+
+include::/home/hang/Documents/Java-not/twoLevel/Java基本特性.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/容器.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/虚拟机.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/多线程和并发.adoc[]
+
+
+== 数据结构与算法
+
+
+=== 数据结构
+
+
+include::/home/hang/Documents/Java-not/twoLevel/字符串.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/数组.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/链表.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/堆栈队列.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/二叉树.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/哈希.adoc[]
+
+
+=== 算法
+
+
+include::/home/hang/Documents/Java-not/twoLevel/排序.adoc[]
+
+
+== 数据库
+
+
+=== sql
+
+
+include::/home/hang/Documents/Java-not/twoLevel/sql语句书写.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/sql语句优化.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/事务和隔离级别.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/索引.adoc[]
+
+
+=== mongodb
+
+include::/home/hang/Documents/Java-not/twoLevel/增删改查.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/与sql区别.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/索引.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/查询优化.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/分片.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/集群.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/备份.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/事务.adoc[]
+
+
+=== 操作系统
+
+
+include::/home/hang/Documents/Java-not/twoLevel/进程和线程.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/并发和锁.adoc[]
+
+
+=== 设计模式
+
+
+include::/home/hang/Documents/Java-not/twoLevel/单例.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/工厂.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/代理.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/策略.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/观察者.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/适配器.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/责任链.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/建造者.adoc[]
+
+
+=== Spring家族框架
+
+
+include::/home/hang/Documents/Java-not/twoLevel/Spring.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/SpringMVC.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/Springboot.adoc[]
+
+
+=== 服务软件
+
+
+==== Web服务器
+
+include::/home/hang/Documents/Java-not/twoLevel/Nginx.adoc[]
+
+==== 应用服务器
+
+include::/home/hang/Documents/Java-not/twoLevel/Tomcat.adoc[]
+
+=== 中间件
+
+
+==== 缓存
+
+include::/home/hang/Documents/Java-not/twoLevel/Redis.adoc[]
+
+==== 消息队列
+
+include::/home/hang/Documents/Java-not/twoLevel/RocketMQ.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/RabbitMQ.adoc[]
+
+==== RPC框架
+
+include::/home/hang/Documents/Java-not/twoLevel/Dubbo.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/SpringCloud.adoc[]
+
+
+=== 数据库架构
+
+
+==== ORM框架
+
+include::/home/hang/Documents/Java-not/twoLevel/Mybatis.adoc[]
+
+==== 连接池
+
+include::/home/hang/Documents/Java-not/twoLevel/Druid.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/C3P0.adoc[]
+
+==== 分库分表
+
+include::/home/hang/Documents/Java-not/twoLevel/MyCat.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/Sharding-JDBC.adoc[]
+
+
+=== 搜索引擎
+
+
+include::/home/hang/Documents/Java-not/twoLevel/Slor.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/ElasticSearch.adoc[]
+
+
+=== 分布式/微服务
+
+
+==== 服务注册/发现
+
+include::/home/hang/Documents/Java-not/twoLevel/Eureka.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/Zookeeper.adoc[]
+
+==== 网关
+
+include::/home/hang/Documents/Java-not/twoLevel/Zuul.adoc[]
+
+==== 服务调用 (负载均衡)
+
+include::/home/hang/Documents/Java-not/twoLevel/Ribbon.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/Feign.adoc[]
+
+==== 熔断/降级
+
+include::/home/hang/Documents/Java-not/twoLevel/Hystrix.adoc[]
+
+==== 分布式事务
+
+==== 任务调度
+
+include::/home/hang/Documents/Java-not/twoLevel/Quartz.adoc[]
+
+==== 链路追踪
+
+include::/home/hang/Documents/Java-not/twoLevel/Skywalking.adoc[]
+
+
+== 面试问答
+
+
+include::/home/hang/Documents/Java-not/twoLevel/北京某公司20190313.adoc[]
+
+include::/home/hang/Documents/Java-not/twoLevel/杭州面试.adoc[]
+
+

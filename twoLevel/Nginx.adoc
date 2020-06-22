@@ -1,0 +1,14 @@
+
+
+===== Nginx
+
+
+include::/home/hang/Documents/Java-not/content/反向代理.adoc[]
+
+include::/home/hang/Documents/Java-not/content/负载均衡.adoc[]
+
+include::/home/hang/Documents/Java-not/content/动静分离.adoc[]
+
+include::/home/hang/Documents/Java-not/content/高可用.adoc[]
+
+include::/home/hang/Documents/Java-not/content/匹配规则.adoc[]
