@@ -1,0 +1,87 @@
+
+
+====== 分布式锁
+
+
+.加锁 _方式一_
+主要是调用 `jedis.set(key, request_id, NX, PX, 5000)`,
+该方法可以保证插入数据和设置过期时间两个操作的原子性.
+
+
+. 第一个参数是数据的key
+. 第二个参数是记录加锁的请求, 需要加锁和解锁要是同一人 +
+根据实际情况可以传随机字符串, 也可以传用户id
+. 第三个参数是NX, 只有锁不存在时才创建锁
+. 第四个参数是PX, 开启过期时间
+. 第五个参数是设置过期时间, 单位是mm
+
+ 加锁方式一只适用于单机情况下. 比如主从切换时这种方式就会出现锁丢失
+
+
+.加锁 _方式二_
+. 加锁
+.. 首先要求redis的多个节点在不同的机器上, 保证不会同时挂掉
+.. 在加锁时, 在多个节点上都加上相同的锁
+. 获取锁
+.. 获取锁前需要先记录当前系统时间
+.. 依次从N个实例中, 使用相同的key和request_id获取锁
+.. 获取锁时, 需要设置网络连接和相应超时时间,
+以便节点没有相应时, 及时向其他节点获取锁
+.. 获取到锁时, 当前时间减去开始获取锁的时间, 如果大于锁的过期时间,
+则获取锁失败, 清除所有节点上的锁. +
+避免重复获取锁失败
+.. 至少要从N/2 + 1 个节点获取到锁, 如果没有则获取失败, 清除所有节点上的锁
+. 使用已封装好的Redission框架
+.. 通过redis配置信息创建RedissionClient
+.. 通过key和request_id获得RLock
+.. 调用tryLock()方法设置 _超时间/过期时间/时间单位_,
+redission将依次从多个服务器中尝试获得redis锁
+.. 如果获得成功执行业务逻辑
+.. 最后释放锁
+.. https://mp.weixin.qq.com/s/JLEzNqQsx-Lec03eAsXFOQ
+
+
+.解锁
+. 需要两个参数: key和request_id.
+. 解锁时先通过key找到这条数据, 校验request_id是否相等, 如果相等就删除该锁.
+. 可以使用 `eval()` 方法执行Lua代码实现解锁,
+redis支持在Lua代码中同时执行多个操作, 并保证原子性
+
+
+.加锁 _方式一_ 代码示例
+[source,java]
+----
+    private static final String LOCK_SUCCESS = "OK";
+    private static final String SET_IF_NOT_EXIST = "NX";
+    private static final String SET_WITH_EXPIRE_TIME = "PX";
+
+    public static boolean tryGetDistributedLock(Jedis jedis, String lockKey, String requestId, int expireTime) {
+
+        String result = jedis.set(lockKey, requestId, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);
+
+        if (LOCK_SUCCESS.equals(result)) {
+            return true;
+        }
+        return false;
+
+    }
+----
+
+
+.解锁代码示例
+[source,java]
+----
+    private static final Long RELEASE_SUCCESS = 1L;
+
+    public static boolean releaseDistributedLock(Jedis jedis, String lockKey, String requestId) {
+
+        String script = "if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end";
+        Object result = jedis.eval(script, Collections.singletonList(lockKey), Collections.singletonList(requestId));
+
+        if (RELEASE_SUCCESS.equals(result)) {
+            return true;
+        }
+        return false;
+
+    }
+----

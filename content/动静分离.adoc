@@ -1,3 +1,23 @@
 
 
 ====== 动静分离
+
+
+在server块中location值中配置匹配路径, 区分静态资源和后台访问
+
+.动静分离优势
+. 通过nginx访问, 提高访问速度, 提供负载均衡
+. 减少后端请求
+
+
+.代码示例
+[source.js]
+----
+location /static/~(.*)(\.jpg|\.png|\.gif|\.jepg|\.css|\.js|\.css){  #  静态资源则路由到这里
+    alias html;
+}
+
+location / {  #  其他的url则转发到 http://192.168.25.35:8080
+    proxy_pass http://192.168.25.35:8080;
+}
+----

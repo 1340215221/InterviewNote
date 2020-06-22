@@ -1,3 +1,70 @@
 
 
 ====== 匹配规则
+
+
+.语法规则
+|===
+
+|符号 |含义
+
+|=
+|开头表示精准匹配
+
+|^~
+|开头表示 uri 以某个常规字符串开头，理解为匹配 url 路径即可。nginx 不对 url 做编码，因此请求为/static/20%/aa，可以被规则^~ /static/ /aa匹配到（注意是空格）
+
+|~
+|开头表示区分大小写的正则匹配
+
+|~*
+|开头表示不区分大小写的正则匹配
+
+|/
+|通用匹配，任何请求都会匹配到
+
+|===
+
+
+.多个location匹配时优先选择顺序
+. 首先匹配 =
+. 其次匹配 ^~
+. 其次按文件中的顺序的正则匹配
+. 最后交给 / 通用匹配
+
+
+.代码示例
+[source,js]
+----
+location = / {
+   #规则A
+}
+location = /login {
+   #规则B
+}
+location ^~ /static/ {
+   #规则C
+}
+location ~ \.(gif|jpg|png|js|css)$ {
+   #规则D
+}
+location ~* \.png$ {
+   #规则E
+}
+location / {
+   #规则F
+}
+----
+
+
+ 那么产生的效果如下：
+ 访问根目录 /， 比如 http://localhost/ 将匹配规则 A
+ 访问 http://localhost/login 将匹配规则 B，http://localhost/register 则匹配规则 F
+ 访问 http://localhost/static/a.html 将匹配规则 C
+ 访问 http://localhost/a.gif, http://localhost/b.jpg 将匹配规则 D和规则 E，但是规则 D 顺序优先，规则 E不起作用，而 http://localhost/static/c.png则优先匹配到规则 C
+ 访问 http://localhost/a.PNG 则匹配规则 E，而不会匹配规则 D，因为规则 E 不区分大小写
+ 访问 http://localhost/category/id/1111 则最终匹配到规则 F，因为以上规则都不匹配，这个时候应该是 nginx 转发请求给后端应用服务器，比如 FastCGI（PHP），tomcat（jsp），nginx 作为反向代理服务器存在
+
+
+
+

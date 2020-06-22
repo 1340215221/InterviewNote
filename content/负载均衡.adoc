@@ -3,3 +3,48 @@
 ====== 负载均衡
 
 
+.负载均衡策略
+. round_robin
+轮询
+. ip_hash
+IP哈希
+. least_conn
+最少连接
+
+
+.权重
+[source.js]
+----
+upstream foo {
+    server localhost:8001 weight=2;
+    server localhost:8002;
+    server localhost:8003 backup;
+    server localhost:8004 max_fails=3 fail_timeout=20s;
+}
+----
+
+
+.IP哈希
+[source,js]
+----
+upstream foo {
+    ip_hash;
+    server localhost:8001 weight=2;
+    server localhost:8002;
+    server localhost:8003;
+    server localhost:8004 max_fails=3 fail_timeout=20s;
+}
+----
+
+
+.最少连接
+[source,js]
+----
+upstream foo {
+    least_conn;
+    server localhost:8001 weight=2;
+    server localhost:8002;
+    server localhost:8003 backup;
+    server localhost:8004 max_fails=3 fail_timeout=20s;
+}
+----
