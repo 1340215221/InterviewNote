@@ -1,0 +1,13 @@
+
+
+===== GridFS介绍
+
+
+使用GridFsTemplate.store(inputStream, "user_selected.png", "image/png")
+上传文件
+
+
+. GridFS并不是将单个文件存储为一个document, 而是将文件分为多个chunk存储.
+GridFS中每个chunk大小为255k.
+. GridFS使用两个collection来存储文件, 一个用来存储实际文件数据,
+一个用来存储文件参数(文件名/文件类型/MD5等信息)

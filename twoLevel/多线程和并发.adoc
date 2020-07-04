@@ -6,3 +6,5 @@
 include::/home/hang/Documents/Java-not/content/创建线程的方式.adoc[]
 
 include::/home/hang/Documents/Java-not/content/线程通讯方式.adoc[]
+
+include::/home/hang/Documents/Java-not/content/锁.adoc[]

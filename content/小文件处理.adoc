@@ -1,0 +1,19 @@
+
+
+===== 小文件处理
+
+
+.小文件问题
+. 本地文件系统inode数量有限, 存储小文件的数量受到限制
+. 多级目录+目录里有很多文件, 导致访问文件的开销很大(可能导致多次IO)
+. 按小文件 _存储/备份/恢复_ 效率低
+
+
+. FastDFS提供了合并功能, 默认创建大小为64MB的文件.
+在该文件中存储多个小文件
+. 大文件中每个小文件空间作为一个Slot.
+一个Slot最小为256字节, 最大为16MB
+. 保存小文件时, 会生成一个file_id和offset,
+一个trunk_file内的小文件共用一个file_id, 用offe来标记每个小文件
+. 在保存合并文件时, 由Tracker从Storage group中选出trunk_server,
+由trunk_server来保存trunk_file, 然后再将合并文件同步到group内的其他storage

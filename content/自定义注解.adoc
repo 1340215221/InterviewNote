@@ -1,0 +1,42 @@
+
+
+===== 自定义注解
+
+
+.设置作用目标
+. `@Target` 注解
+. ElementType.TYPE
+应用于 _类/接口/枚举_
+. ElementType.METHOD
+应用于方法
+. ElementType.FIELD
+应用于属性
+
+
+.设置生命周期
+. @Retention
+. RetentionPolicy.SOURCE
+编译时被丢弃, 不包含在类文件中 +
+在lombok中使用, 编译时通过注解自动生成代码
+. RetentionPolicy.CLASS
+JVM加载时被丢弃, 包含在类文件中, 默认值
+. RetentionPolicy.RUNTIME
+由JVM加载, 包含在类文件中, 在运行时可以被获取到 +
+常用于spring AOP自定义注解
+
+
+.是否被子类继承
+@Inherited
+
+
+
+[source,java]
+----
+@Target({ElementType.FIELD, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Info {
+      String value() default "tracy";
+      boolean isDelete();
+}
+----

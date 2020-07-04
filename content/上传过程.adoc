@@ -1,0 +1,20 @@
+
+
+===== 上传过程
+
+
+FastDFS中Storage用来存储文件, Tracker用来管理Storage集群
+
+. 客户端发出上传请求
+. 在FastDFS中由Storage来实际储存文件, Tracker用来管理Storage集群
+. tracker接收到请求后, 在Storage集群中查找剩余空间足够,
+且处于空闲状态的Storage地址返回给客户端
+. 客户端通过Storage地址, 将文件直接上传到Storage上
+. Storage将返回一个文件访问路径,
+客户端需要将返回的访问路径保存到数据库
+. Storage中不同组存储不同的文件, 同一组内存储相同的文件, 通过同步线程同步
+
+
+.file_id结构
+- 组名 + 磁盘 + 目录 + 文件名
+- group1/M00/00/0C/wKjRbExx2K0AAAAAAAANiSQUgyg37275.h
