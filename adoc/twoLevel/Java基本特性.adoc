@@ -1,0 +1,10 @@
+
+
+=== Java基本特性
+
+
+include::../content/Java基本特性.adoc[]
+
+include::../content/接口与抽象类的区别.adoc[]
+
+include::../content/基本类型.adoc[]

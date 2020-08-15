@@ -1,0 +1,9 @@
+
+
+==== 排序
+
+include::../content/插入排序.adoc[]
+
+include::../content/冒泡排序.adoc[]
+
+include::../content/快速排序.adoc[]

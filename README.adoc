@@ -13,13 +13,13 @@ v1.0, 2013-08-01
 == Java基础
 
 
-include::/home/hang/Documents/Java-not/twoLevel/Java基本特性.adoc[]
+include::adoc/twoLevel/Java基本特性.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/容器.adoc[]
+include::adoc/twoLevel/容器.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/虚拟机.adoc[]
+include::adoc/twoLevel/虚拟机.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/多线程和并发.adoc[]
+include::adoc/twoLevel/多线程和并发.adoc[]
 
 
 == 数据结构与算法
@@ -28,23 +28,23 @@ include::/home/hang/Documents/Java-not/twoLevel/多线程和并发.adoc[]
 === 数据结构
 
 
-include::/home/hang/Documents/Java-not/twoLevel/字符串.adoc[]
+include::adoc/twoLevel/字符串.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/数组.adoc[]
+include::adoc/twoLevel/数组.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/链表.adoc[]
+include::adoc/twoLevel/链表.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/堆栈队列.adoc[]
+include::adoc/twoLevel/堆栈队列.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/二叉树.adoc[]
+include::adoc/twoLevel/二叉树.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/哈希.adoc[]
+include::adoc/twoLevel/哈希.adoc[]
 
 
 === 算法
 
 
-include::/home/hang/Documents/Java-not/twoLevel/排序.adoc[]
+include::adoc/twoLevel/排序.adoc[]
 
 
 == 数据库
@@ -53,70 +53,70 @@ include::/home/hang/Documents/Java-not/twoLevel/排序.adoc[]
 === sql
 
 
-include::/home/hang/Documents/Java-not/twoLevel/sql语句书写.adoc[]
+include::adoc/twoLevel/sql语句书写.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/sql语句优化.adoc[]
+include::adoc/twoLevel/sql语句优化.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/事务和隔离级别.adoc[]
+include::adoc/twoLevel/事务和隔离级别.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/索引.adoc[]
+include::adoc/twoLevel/索引.adoc[]
 
 
 === mongodb
 
-include::/home/hang/Documents/Java-not/twoLevel/增删改查.adoc[]
+include::adoc/twoLevel/增删改查.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/与sql区别.adoc[]
+include::adoc/twoLevel/与sql区别.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/索引.adoc[]
+include::adoc/twoLevel/索引.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/查询优化.adoc[]
+include::adoc/twoLevel/查询优化.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/分片.adoc[]
+include::adoc/twoLevel/分片.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/集群.adoc[]
+include::adoc/twoLevel/集群.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/备份.adoc[]
+include::adoc/twoLevel/备份.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/事务.adoc[]
+include::adoc/twoLevel/事务.adoc[]
 
 
 === 操作系统
 
 
-include::/home/hang/Documents/Java-not/twoLevel/进程和线程.adoc[]
+include::adoc/twoLevel/进程和线程.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/并发和锁.adoc[]
+include::adoc/twoLevel/并发和锁.adoc[]
 
 
 === 设计模式
 
 
-include::/home/hang/Documents/Java-not/twoLevel/单例.adoc[]
+include::adoc/twoLevel/单例.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/工厂.adoc[]
+include::adoc/twoLevel/工厂.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/代理.adoc[]
+include::adoc/twoLevel/代理.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/策略.adoc[]
+include::adoc/twoLevel/策略.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/观察者.adoc[]
+include::adoc/twoLevel/观察者.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/适配器.adoc[]
+include::adoc/twoLevel/适配器.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/责任链.adoc[]
+include::adoc/twoLevel/责任链.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/建造者.adoc[]
+include::adoc/twoLevel/建造者.adoc[]
 
 
 === Spring家族框架
 
 
-include::/home/hang/Documents/Java-not/twoLevel/Spring.adoc[]
+include::adoc/twoLevel/Spring.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/SpringMVC.adoc[]
+include::adoc/twoLevel/SpringMVC.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/Springboot.adoc[]
+include::adoc/twoLevel/Springboot.adoc[]
 
 
 === 服务软件
@@ -124,30 +124,30 @@ include::/home/hang/Documents/Java-not/twoLevel/Springboot.adoc[]
 
 ==== Web服务器
 
-include::/home/hang/Documents/Java-not/twoLevel/Nginx.adoc[]
+include::adoc/twoLevel/Nginx.adoc[]
 
 ==== 应用服务器
 
-include::/home/hang/Documents/Java-not/twoLevel/Tomcat.adoc[]
+include::adoc/twoLevel/Tomcat.adoc[]
 
 === 中间件
 
 
 ==== 缓存
 
-include::/home/hang/Documents/Java-not/twoLevel/Redis.adoc[]
+include::adoc/twoLevel/Redis.adoc[]
 
 ==== 消息队列
 
-include::/home/hang/Documents/Java-not/twoLevel/RocketMQ.adoc[]
+include::adoc/twoLevel/RocketMQ.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/RabbitMQ.adoc[]
+include::adoc/twoLevel/RabbitMQ.adoc[]
 
 ==== RPC框架
 
-include::/home/hang/Documents/Java-not/twoLevel/Dubbo.adoc[]
+include::adoc/twoLevel/Dubbo.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/SpringCloud.adoc[]
+include::adoc/twoLevel/SpringCloud.adoc[]
 
 
 === 数据库架构
@@ -155,27 +155,27 @@ include::/home/hang/Documents/Java-not/twoLevel/SpringCloud.adoc[]
 
 ==== ORM框架
 
-include::/home/hang/Documents/Java-not/twoLevel/Mybatis.adoc[]
+include::adoc/twoLevel/Mybatis.adoc[]
 
 ==== 连接池
 
-include::/home/hang/Documents/Java-not/twoLevel/Druid.adoc[]
+include::adoc/twoLevel/Druid.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/C3P0.adoc[]
+include::adoc/twoLevel/C3P0.adoc[]
 
 ==== 分库分表
 
-include::/home/hang/Documents/Java-not/twoLevel/MyCat.adoc[]
+include::adoc/twoLevel/MyCat.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/Sharding-JDBC.adoc[]
+include::adoc/twoLevel/Sharding-JDBC.adoc[]
 
 
 === 搜索引擎
 
 
-include::/home/hang/Documents/Java-not/twoLevel/Slor.adoc[]
+include::adoc/twoLevel/Slor.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/ElasticSearch.adoc[]
+include::adoc/twoLevel/ElasticSearch.adoc[]
 
 
 === 分布式/微服务
@@ -183,80 +183,80 @@ include::/home/hang/Documents/Java-not/twoLevel/ElasticSearch.adoc[]
 
 ==== 服务注册/发现
 
-include::/home/hang/Documents/Java-not/twoLevel/Eureka.adoc[]
+include::adoc/twoLevel/Eureka.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/Zookeeper.adoc[]
+include::adoc/twoLevel/Zookeeper.adoc[]
 
 ==== 网关
 
-include::/home/hang/Documents/Java-not/twoLevel/Zuul.adoc[]
+include::adoc/twoLevel/Zuul.adoc[]
 
 ==== 服务调用 (负载均衡)
 
-include::/home/hang/Documents/Java-not/twoLevel/Ribbon.adoc[]
+include::adoc/twoLevel/Ribbon.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/Feign.adoc[]
+include::adoc/twoLevel/Feign.adoc[]
 
 ==== 熔断/降级
 
-include::/home/hang/Documents/Java-not/twoLevel/Hystrix.adoc[]
+include::adoc/twoLevel/Hystrix.adoc[]
 
 ==== 分布式事务
 
 ==== 任务调度
 
-include::/home/hang/Documents/Java-not/twoLevel/Quartz.adoc[]
+include::adoc/twoLevel/Quartz.adoc[]
 
 ==== 链路追踪
 
-include::/home/hang/Documents/Java-not/twoLevel/Skywalking.adoc[]
+include::adoc/twoLevel/Skywalking.adoc[]
 
 
 === 文件系统
 
-include::/home/hang/Documents/Java-not/twoLevel/FastDFS.adoc[]
+include::adoc/twoLevel/FastDFS.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/GridFS.adoc[]
+include::adoc/twoLevel/GridFS.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/文件系统选择.adoc[]
+include::adoc/twoLevel/文件系统选择.adoc[]
 
 
 === CAS登陆
 
 
-include::/home/hang/Documents/Java-not/twoLevel/CAS登陆.adoc[]
+include::adoc/twoLevel/CAS登陆.adoc[]
 
 
 === 开源框架
 
 
-include::/home/hang/Documents/Java-not/twoLevel/集成框架异常处理.adoc[]
+include::adoc/twoLevel/集成框架异常处理.adoc[]
 
 
 === AOP
 
 
-include::/home/hang/Documents/Java-not/twoLevel/AOP配置.adoc[]
+include::adoc/twoLevel/AOP配置.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/AOP实现操作权限.adoc[]
+include::adoc/twoLevel/AOP实现操作权限.adoc[]
 
 
 === 审批流
 
 
-include::/home/hang/Documents/Java-not/twoLevel/Activity.adoc[]
+include::adoc/twoLevel/Activity.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/Snaker.adoc[]
+include::adoc/twoLevel/Snaker.adoc[]
 
 
 == 面试问答
 
 
-include::/home/hang/Documents/Java-not/twoLevel/北京某公司20190313.adoc[]
+include::adoc/twoLevel/北京某公司20190313.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/杭州面试.adoc[]
+include::adoc/twoLevel/杭州面试.adoc[]
 
-include::/home/hang/Documents/Java-not/twoLevel/易宝面试.adoc[]
+include::adoc/twoLevel/易宝面试.adoc[]
 
 
 ////

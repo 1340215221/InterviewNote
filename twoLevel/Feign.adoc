@@ -1,8 +1,0 @@
-
-
-===== Feign
-
-
-include::/home/hang/Documents/Java-not/content/Feign接口配置.adoc[]
-
-include::/home/hang/Documents/Java-not/content/Ribbon与Feign的区别.adoc[]
