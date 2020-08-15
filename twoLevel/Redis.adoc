@@ -22,3 +22,6 @@ include::/home/hang/Documents/Java-not/content/持久化.adoc[]
 
 
 include::/home/hang/Documents/Java-not/content/集群.adoc[]
+
+
+include::/home/hang/Documents/Java-not/content/Redis三大问题.adoc[]

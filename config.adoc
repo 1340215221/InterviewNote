@@ -1,0 +1,4 @@
+
+:project-path:
+:java-path:
+:resources-path:
