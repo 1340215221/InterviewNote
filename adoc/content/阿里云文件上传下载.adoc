@@ -1,0 +1,84 @@
+
+==== 阿里云文件上传下载
+
+
+===== 文件上传
+
+
+.方案一,由后端接收文件上传到OSS
+[source,java]
+----
+// 1. controller接口
+ @PostMapping(value = "upload/{modelName}", consumes = "multipart/form-data")
+    public String upload(@RequestParam MultipartFile file, @PathVariable String modelName) {
+
+
+// 2. 配置OSS客户端
+@Validated
+@Configuration
+public class OSSConfig {
+
+    /**
+     * 外网访问节点
+     */
+    @Value("${aliyun.oss.endpoint}")
+    private String endpoint;
+    @Value("${aliyun.accessKeyId}")
+    private String accessKeyId;
+    @Value("${aliyun.accessSecret}")
+    private String accessSecret;
+
+    @Bean
+    public OSS newOSSClient() {
+        return new OSSClientBuilder().build(endpoint, accessKeyId, accessSecret);
+    }
+
+
+// 3. 后端上传到OSS
+    @Value("${aliyun.oss.bucketName}")
+    private String bucketName;
+
+    ossClient.putObject(bucketName, objectName, file.getInputStream()); // 第二个参数是 (目录 + 文件名), 如  company/2020_08_10/79666ad2-3d0f-4877-a2d3-8afa980178af.jpg
+
+
+----
+
+
+.方案二,后端返回临时的OSS地址
+. 前端第一次请求上传路径, 后端保存文件相关信息
+. 前端第二次请求上传文件到OSS
+- 减少了上传时服务器的压力
+- 存在跨域问题没有解决
+- 直接暴露上传地址可能会非常不安全
+
+
+===== 下载文件
+
+
+.后台返回临时的OSS文件路径
+[source,java]
+----
+public URL requestDownloadUrl(@NonNull String objectName) {
+        Date expiration = new Date(System.currentTimeMillis() + CommonConstants.OSS_URL_EFFECTIVE_TIME);
+        return ossClient.generatePresignedUrl(bucketName, objectName, expiration);  // 第三个参数为到期时间
+}
+
+// url.toString()  即为http访问路径
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

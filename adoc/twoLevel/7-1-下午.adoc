@@ -1,0 +1,6 @@
+
+=== 7-1-下午
+
+
+- springboot约定大于配置
+- springboot对比spring优点

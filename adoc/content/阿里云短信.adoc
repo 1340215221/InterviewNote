@@ -1,0 +1,53 @@
+
+==== 阿里云短信
+
+
+
+.发送短信
+[source,java]
+----
+// 1. 配置SMS客户端
+public class SMSConfig implements ApplicationContextAware {
+    private ApplicationContext app;
+    @Value("${aliyun.accessKeyId}")
+    private String accessKeyId;
+    @Value("${aliyun.accessSecret}")
+    private String accessSecret;
+
+    @Bean
+    public IAcsClient newSMSClient() throws Exception {
+        IClientProfile profile = DefaultProfile.getProfile(SMSConstants.ENDPOINT_NAME, accessKeyId, accessSecret);
+        try {
+            DefaultProfile.addEndpoint(SMSConstants.ENDPOINT_NAME, SMSConstants.ENDPOINT_NAME, SMSConstants.PRODUCT, SMSConstants.DOMAIN);
+        } catch (ClientException e) {
+            log.error("SMSConfig.newSMSClient error, 创建阿里短信客户端失败", e);
+            throw e;
+        }
+        return new DefaultAcsClient(profile);
+    }
+
+
+// 2. 本地生成随机数作为短信验证码
+
+// 3. 在redis上用手机号作为key保存验证码, 用于之后的校验
+
+// 4. 通过阿里客户端发送验证码
+    @Value("${aliyun.sms.signName}")
+    private String signName;
+    @Value("${aliyun.sms.captchaTemplateCode}")
+    private String captchaTemplateCode;
+    @Autowired
+    private IAcsClient smsClient;
+
+    SendSmsRequest request = new SendSmsRequest();
+    request.setPhoneNumbers(smsMessage.getMobile());
+    request.setSignName(signName);
+    request.setOutId("yourOutId"); // 这个不知道是干嘛的, 好像不影响
+    Map params = new HashMap(8);
+    params.put("code", smsMessage.getCaptcha()); // 短信模板中的变量, 实际发送时会替换掉短信模板中的${code}变量
+    request.setTemplateCode(smsMessage.getTemplateCode());  // 短信模板需要阿里云审核, 审核通过后有个templateCode
+    request.setTemplateParam(JSONObject.toJSONString(params));
+    SendSmsResponse sendSmsResponse = smsClient.getAcsResponse(request);
+
+
+----

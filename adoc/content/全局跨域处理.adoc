@@ -1,0 +1,30 @@
+
+==== 全局跨域处理
+
+
+[source,java]
+----
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class CorsConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        //允许跨域访问路径
+        registry.addMapping("/**")
+                //允许跨域访问的源
+                .allowedOrigins("*")
+                //允许请求的方法
+                .allowedMethods("POST", "GET", "PUT", "OPTIONS", "DELETE")
+                //预间隔时间
+                .maxAge(168000)
+                //允许头部设置
+                .allowedHeaders("*")
+                .exposedHeaders("captcha", "token", "last_update_time")  // 响应头跨域字段设置
+                //是否发送cookie
+                .allowCredentials(true);
+    }
+}
+----

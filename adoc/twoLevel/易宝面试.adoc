@@ -1,3 +1,21 @@
 
 
 === 易宝面试
+
+
+- 多线程通讯方式?
+- syn与lock锁区别
+- left join和right join区别
+- spring bean生命周期
+- 用过的设计模式
+- redis三大问题
+- redis如何保证和数据库的数据同步(一致)
+- redis单线程为何能承受高并发请求
+- 开闭原则
+- _kafka,rabbit,rocket_ 有啥区别
+- sleep和wait有啥区别
+- springboot常用注解
+- gc算法
+- 如何让hashmap不参与gc
+- 循环依赖时, 查找类的顺序
+- 在linux里查找一个字符串

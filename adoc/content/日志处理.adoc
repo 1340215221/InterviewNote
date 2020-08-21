@@ -1,0 +1,85 @@
+
+==== 日志处理
+
+
+===== 简单日志配置
+
+.简单日志配置
+[source,xml]
+----
+这里引用下logback.xml配置文件
+----
+
+
+===== 添加线程标识
+
+.给同一个线程日志添加随机数标记
+[source,java]
+----
+import org.slf4j.MDC;
+import java.util.UUID;
+
+MDC.put("thread_id", UUID.randomUUID().toString().replace("-", "").toUpperCase());
+----
+
+
+===== controller层调用日志
+
+
+.获取请求中的用户和公司信息
+通过登录凭证或登录key获取
+
+
+.获取请求中的参数
+[source,java]
+----
+// 请求地址
+request.getRequestURI();
+// 请求方法
+request.getMethod();
+// 请求参数
+Optional.ofNullable(request.getParameterMap()).map(JSONObject::toJSONString).orElse(null);
+// 请求体
+String body = "";
+try (ServletInputStream sis = request.getInputStream();
+    InputStreamReader isr = new InputStreamReader(sis);
+    BufferedReader br = new BufferedReader(isr)
+) {
+    body = br.lines().collect(Collectors.joining());
+} catch (Exception e) {
+    log.warn("读取请求体数据失败");
+}
+----
+
+
+.获取请求体数据问题
+由于RequestBody读取过一次请求体中的数据后, 请求体中的数据就会被放到另一个地方.
+所以就需要对post请求的request对象进行替换, 方便重复读取请求体内容.
+遇到的问题: 请求中携带的文件流如何复制?
+
+
+.替换post的request对象
+[source,java]
+----
+// 需要引用java类
+// 重写的request对象和post过滤器
+----
+
+
+===== 给日志分流到不同的文件
+
+.日志分流
+[source,java]
+----
+// 特殊日志设置为debug级别, 通用日志只捕获info及以下级别的日志
+// 给分流日志添加自定义过滤器, 需要实现Filter<ILoggingEvent>
+// 拦截器的decide()返回FilterReply.ACCEPT即打印, 返回FilterReply.DENY拒绝打印
+// 目前实现是通过匹配日志信息中的内容关键字进行过滤的
+----
+
+
+
+
+
+
+

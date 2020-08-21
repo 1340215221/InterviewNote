@@ -1,0 +1,95 @@
+
+==== 持久层方法切面
+
+
+用于统一处理入库对象的更新人和更新时间字段的自动赋值.
+通过Service和Dao方法名前缀是否为 _update,insert,save_ ,来判断是否更新和更新哪些字段.
+
+据测试对mybatis-plus动态生成的方法也有效
+
+
+.切面类 1. 切点和切面方法
+[source,java]
+----
+@Aspect
+@Component
+public class DaoAspect {
+    @Pointcut("execution(* com.ymw.mt.admin.dao..*.update*(..))")
+    public void daoUpdate() {
+    }
+
+    @Pointcut("execution(* com.ymw.mt.admin.dao..*.insert*(..))")
+    public void daoCreate() {
+    }
+
+    @Pointcut("execution(* com.ymw.mt.admin.service..*.update*(..))")
+    public void daoUpdateMp() {
+    }
+
+    @Pointcut("execution(* com.ymw.mt.admin.service..*.insert*(..))")
+    public void daoCreateMp() {
+    }
+
+    @Around("daoUpdate()")
+    public Object doAroundUpdate(ProceedingJoinPoint pjp) throws Throwable {
+        return commonUpdate(pjp);
+    }
+
+    @Around("daoCreate()")
+    public Object doAroundCreate(ProceedingJoinPoint pjp) throws Throwable {
+        return commonCreate(pjp);
+    }
+
+    @Around("daoUpdateMp()")
+    public Object doAroundUpdateMp(ProceedingJoinPoint pjp) throws Throwable {
+        return commonUpdate(pjp);
+    }
+
+    @Around("daoCreateMp()")
+    public Object doAroundCreateMp(ProceedingJoinPoint pjp) throws Throwable {
+        return commonCreate(pjp);
+    }
+----
+
+
+.切面类 2. 切面处理逻辑方法
+[source,java]
+----
+    private Object commonUpdate(ProceedingJoinPoint pjp) throws Throwable {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();  // spring中用于获取当前线程的HttpRequest, 从而判断是否为用户操作
+        if (attributes == null) {
+            return pjp.proceed(); // 执行被代理的方法
+        }
+        Object[] args = pjp.getArgs();
+        if (ArrayUtils.isEmpty(args)) {
+            return pjp.proceed(); // 该切面是通过获取被代理方法中的entity参数, 向entity对象赋值的
+        }
+        Arrays.stream(args)
+                .filter(arg -> arg instanceof BaseModel)  // BaseModel在这里是所有entity的父类, BaseModel中定义了基础的entity属性和注解, 可以通过类型来识别参数是否为entity对象
+                .findFirst()
+                .ifPresent(arg -> ((BaseModel) arg).update(getUserId()));
+        return pjp.proceed();
+    }
+
+    private Object commonCreate(ProceedingJoinPoint pjp) throws Throwable {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes == null) {
+            return pjp.proceed();
+        }
+        Object[] args = pjp.getArgs();
+        if (ArrayUtils.isEmpty(args)) {
+            return pjp.proceed();
+        }
+        Arrays.stream(args)
+                .filter(arg -> arg instanceof BaseModel)
+                .findFirst()
+                .ifPresent(arg -> ((BaseModel) arg).insert(getUserId()));
+        return pjp.proceed();
+    }
+
+    private Long getUserId() {  // 该方法要实现从spring上下文中获取到当前用户id的功能
+
+
+----
+
+
