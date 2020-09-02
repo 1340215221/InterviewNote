@@ -31,3 +31,9 @@ include::../content/引用已有文件.adoc[]
 
 
 include::../content/全局搜索.adoc[]
+
+
+include::../content/主题目录.adoc[]
+
+
+include::../content/include语法.adoc[]
