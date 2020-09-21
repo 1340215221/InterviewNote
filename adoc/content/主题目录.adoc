@@ -1,0 +1,7 @@
+
+
+==== 主题目录
+
+
+. 创建adoc/otherTheme目录
+. 用来存放除README外其他主题, README为默认主题

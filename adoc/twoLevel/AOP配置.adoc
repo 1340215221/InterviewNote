@@ -1,8 +1,0 @@
-
-
-==== AOP配置
-
-
-include::../content/自定义注解.adoc[]
-
-include::../content/切面设置.adoc[]

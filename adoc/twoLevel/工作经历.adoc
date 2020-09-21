@@ -1,0 +1,95 @@
+
+
+== 工作经历
+
+
+=== 文件系统
+
+
+==== FastDFS
+
+
+include::../content/上传过程.adoc[]
+
+include::../content/下载过程.adoc[]
+
+include::../content/小文件处理.adoc[]
+
+
+==== GridFS
+
+
+include::../content/GridFS介绍.adoc[]
+
+include::../content/业务中实现文件系统.adoc[]
+
+
+==== 文件系统选择
+
+
+// todo
+.FastDFS
+. 适合存储4KB-500MB的文件
+. 支持小文件合并
+
+
+.GridFS
+. 适合存储16MB以上的文件
+
+
+=== CAS登陆
+
+
+==== CAS登陆
+
+
+include::../content/单点登录.adoc[]
+
+include::../content/CAS登陆过程.adoc[]
+
+
+=== 开源框架
+
+
+// todo
+include::../content/集成框架异常处理.adoc[]
+
+
+=== AOP
+
+
+==== AOP配置
+
+
+include::../content/自定义注解.adoc[]
+
+include::../content/切面设置.adoc[]
+
+
+==== AOP实现操作权限
+
+
+=== 审批流
+
+
+=== Activity
+
+
+include::../content/数据库设计.adoc[]
+
+
+==== Snaker
+
+
+=== 项目实战
+
+
+include::../content/日志处理.adoc[]
+
+include::../content/全局跨域处理.adoc[]
+
+include::../content/阿里云文件上传下载.adoc[]
+
+include::../content/阿里云短信.adoc[]
+
+include::../content/持久层方法切面.adoc[]

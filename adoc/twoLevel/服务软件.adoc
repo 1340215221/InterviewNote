@@ -1,0 +1,26 @@
+
+
+== 服务软件
+
+
+=== Web服务器
+
+
+==== Nginx
+
+
+include::../content/反向代理.adoc[]
+
+include::../content/负载均衡.adoc[]
+
+include::../content/动静分离.adoc[]
+
+include::../content/高可用.adoc[]
+
+include::../content/匹配规则.adoc[]
+
+
+=== 应用服务器
+
+
+==== Tomcat

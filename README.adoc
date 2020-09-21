@@ -10,280 +10,63 @@ v1.0, 2013-08-01
 :toclevels: 6
 
 
-== Java基础
+// Java基础 //
+include::adoc/twoLevel/Java基础.adoc[]
 
 
-include::adoc/twoLevel/Java基本特性.adoc[]
+// 数据结构与算法 //
+include::adoc/twoLevel/数据结构与算法.adoc[]
 
-include::adoc/twoLevel/容器.adoc[]
 
-include::adoc/twoLevel/虚拟机.adoc[]
+// 数据库 //
+include::adoc/twoLevel/数据库.adoc[]
 
-include::adoc/twoLevel/多线程和并发.adoc[]
 
+// 操作系统 //
+include::adoc/twoLevel/操作系统.adoc[]
 
-== 数据结构与算法
 
+// 设计模式 //
+include::adoc/twoLevel/设计模式.adoc[]
 
-=== 数据结构
 
+// Spring家族框架 //
+include::adoc/twoLevel/Spring家族框架.adoc[]
 
-include::adoc/twoLevel/字符串.adoc[]
 
-include::adoc/twoLevel/数组.adoc[]
+// 服务软件 //
+include::adoc/twoLevel/服务软件.adoc[]
 
-include::adoc/twoLevel/链表.adoc[]
-
-include::adoc/twoLevel/堆栈队列.adoc[]
-
-include::adoc/twoLevel/二叉树.adoc[]
-
-include::adoc/twoLevel/哈希.adoc[]
-
-
-=== 算法
-
-
-include::adoc/twoLevel/排序.adoc[]
-
-
-== 数据库
-
-
-=== sql
-
-
-include::adoc/twoLevel/sql语句书写.adoc[]
-
-include::adoc/twoLevel/sql语句优化.adoc[]
-
-include::adoc/twoLevel/事务和隔离级别.adoc[]
-
-include::adoc/twoLevel/索引.adoc[]
-
-
-=== mongodb
-
-include::adoc/twoLevel/增删改查.adoc[]
-
-include::adoc/twoLevel/与sql区别.adoc[]
-
-include::adoc/twoLevel/索引.adoc[]
-
-include::adoc/twoLevel/查询优化.adoc[]
-
-include::adoc/twoLevel/分片.adoc[]
-
-include::adoc/twoLevel/集群.adoc[]
-
-include::adoc/twoLevel/备份.adoc[]
-
-include::adoc/twoLevel/事务.adoc[]
-
-
-=== 操作系统
-
-
-include::adoc/twoLevel/进程和线程.adoc[]
-
-include::adoc/twoLevel/并发和锁.adoc[]
-
-
-=== 设计模式
-
-
-include::adoc/twoLevel/单例.adoc[]
-
-include::adoc/twoLevel/工厂.adoc[]
-
-include::adoc/twoLevel/代理.adoc[]
-
-include::adoc/twoLevel/策略.adoc[]
-
-include::adoc/twoLevel/观察者.adoc[]
-
-include::adoc/twoLevel/适配器.adoc[]
-
-include::adoc/twoLevel/责任链.adoc[]
-
-include::adoc/twoLevel/建造者.adoc[]
-
-
-=== Spring家族框架
-
-
-include::adoc/twoLevel/Spring.adoc[]
-
-include::adoc/twoLevel/SpringMVC.adoc[]
-
-include::adoc/twoLevel/Springboot.adoc[]
-
-
-=== 服务软件
-
-
-==== Web服务器
-
-include::adoc/twoLevel/Nginx.adoc[]
-
-==== 应用服务器
-
-include::adoc/twoLevel/Tomcat.adoc[]
 
 === 中间件
 
 
-==== 缓存
+// 中间件 //
+include::adoc/twoLevel/中间件.adoc[]
 
-include::adoc/twoLevel/Redis.adoc[]
 
-==== 消息队列
+// 数据库架构 //
+include::adoc/twoLevel/数据库架构.adoc[]
 
-include::adoc/twoLevel/RocketMQ.adoc[]
 
-include::adoc/twoLevel/RabbitMQ.adoc[]
+// 搜索引擎 //
+include::adoc/twoLevel/搜索引擎.adoc[]
 
-==== RPC框架
 
-include::adoc/twoLevel/Dubbo.adoc[]
+// 分布式/微服务 //
+include::adoc/twoLevel/分布式&微服务.adoc[]
 
-include::adoc/twoLevel/SpringCloud.adoc[]
 
+// 工作经历 //
+include::adoc/twoLevel/工作经历.adoc[]
 
-=== 数据库架构
 
+// adoc-note使用 //
+include::adoc/twoLevel/adoc-note使用.adoc[]
 
-==== ORM框架
 
-include::adoc/twoLevel/Mybatis.adoc[]
-
-==== 连接池
-
-include::adoc/twoLevel/Druid.adoc[]
-
-include::adoc/twoLevel/C3P0.adoc[]
-
-==== 分库分表
-
-include::adoc/twoLevel/MyCat.adoc[]
-
-include::adoc/twoLevel/Sharding-JDBC.adoc[]
-
-
-=== 搜索引擎
-
-
-include::adoc/twoLevel/Slor.adoc[]
-
-include::adoc/twoLevel/ElasticSearch.adoc[]
-
-
-=== 分布式/微服务
-
-
-==== 服务注册/发现
-
-include::adoc/twoLevel/Eureka.adoc[]
-
-include::adoc/twoLevel/Zookeeper.adoc[]
-
-==== 网关
-
-include::adoc/twoLevel/Zuul.adoc[]
-
-==== 服务调用 (负载均衡)
-
-include::adoc/twoLevel/Ribbon.adoc[]
-
-include::adoc/twoLevel/Feign.adoc[]
-
-==== 熔断/降级
-
-include::adoc/twoLevel/Hystrix.adoc[]
-
-==== 分布式事务
-
-==== 任务调度
-
-include::adoc/twoLevel/Quartz.adoc[]
-
-==== 链路追踪
-
-include::adoc/twoLevel/Skywalking.adoc[]
-
-
-=== 文件系统
-
-include::adoc/twoLevel/FastDFS.adoc[]
-
-include::adoc/twoLevel/GridFS.adoc[]
-
-include::adoc/twoLevel/文件系统选择.adoc[]
-
-
-=== CAS登陆
-
-
-include::adoc/twoLevel/CAS登陆.adoc[]
-
-
-=== 开源框架
-
-
-include::adoc/twoLevel/集成框架异常处理.adoc[]
-
-
-=== AOP
-
-
-include::adoc/twoLevel/AOP配置.adoc[]
-
-include::adoc/twoLevel/AOP实现操作权限.adoc[]
-
-
-=== 审批流
-
-
-include::adoc/twoLevel/Activity.adoc[]
-
-include::adoc/twoLevel/Snaker.adoc[]
-
-
-include::adoc/twoLevel/项目实战.adoc[]
-
-
-== adoc-note使用
-
-
-include::adoc/twoLevel/需求.adoc[]
-
-include::adoc/twoLevel/问题反馈.adoc[]
-
-
-== 面试问答
-
-
-include::adoc/twoLevel/7-2-下午.adoc[]
-
-include::adoc/twoLevel/7-2-上午.adoc[]
-
-include::adoc/twoLevel/7-1-下午.adoc[]
-
-include::adoc/twoLevel/7-1-上午.adoc[]
-
-include::adoc/twoLevel/运煤网面试.adoc[]
-
-include::adoc/twoLevel/易宝面试.adoc[]
-
-include::adoc/twoLevel/北京某公司20190313.adoc[]
-
-include::adoc/twoLevel/杭州面试.adoc[]
-
-
-== 笔记作用
-
-
-include::adoc/twoLevel/我可以用到的东西.adoc[]
+// 面试问答 //
+include::adoc/twoLevel/面试问答.adoc[]
 
 
 ////

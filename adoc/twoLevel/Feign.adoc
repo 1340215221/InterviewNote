@@ -1,8 +1,0 @@
-
-
-===== Feign
-
-
-include::../content/Feign接口配置.adoc[]
-
-include::../content/Ribbon与Feign的区别.adoc[]
