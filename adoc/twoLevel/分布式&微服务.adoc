@@ -69,6 +69,18 @@ include::../content/Hystrix熔断过程.adoc[]
 ==== Quartz
 
 
+include::../content/重复执行的定时任务.adoc[]
+
+
+include::../content/待参数定时任务.adoc[]
+
+
+include::../content/只执行一次的定时任务.adoc[]
+
+
+include::../content/定时任务持久化.adoc[]
+
+
 === 链路追踪
 
 
