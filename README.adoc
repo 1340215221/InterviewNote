@@ -38,9 +38,6 @@ include::adoc/twoLevel/Spring家族框架.adoc[]
 include::adoc/twoLevel/服务软件.adoc[]
 
 
-=== 中间件
-
-
 // 中间件 //
 include::adoc/twoLevel/中间件.adoc[]
 
