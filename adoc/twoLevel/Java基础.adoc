@@ -11,6 +11,10 @@ include::../content/接口与抽象类的区别.adoc[]
 
 include::../content/基本类型.adoc[]
 
+include::../content/封装类型的缓存.adoc[]
+
+include::../content/try自动关闭资源.adoc[]
+
 
 === 容器
 

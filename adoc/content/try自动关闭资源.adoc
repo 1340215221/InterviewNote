@@ -1,0 +1,13 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+==== try自动关闭资源
+
+
+[source%nowrap,java]
+----
+include::{java-path}/trycatch/TryAutoCloseResources.java[lines=13..15]
+----
+
+
