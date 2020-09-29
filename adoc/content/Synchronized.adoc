@@ -1,0 +1,48 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+==== Synchronized
+
+
+Synchronized是同步的意思, 用于处理共享资源. +
+在方法上加Synchronized, 拿的锁是方法所在的实例化对象. +
+一个类里两个方法都有Synchronized, 执行时, 只有一个正在执行.
+
+----
+oracle的undo表的一致性:
+当一个用户对数据进行修改时, 会预先将其原始数据保存到回退段中, 这时, 如果有其他用户访问该数据时, 则访问回退段中的信息, 使当前用户未提交的修改不被其他用户看到, 保证了数据的一致性.
+----
+
+一个类里两个方法都有Synchronized, 其中一个方法可以调用另一个方法.
+
+----
+在写储存过程, 批量批量处理数据时, 在遇到执行失败了, 要有异常日志. for循环体内, 要有begin end exception. 不写begin和end, 不能写exception.
+----
+
+
+.Synchronized的使用方式
+. 对象锁
++
+[source,java]
+----
+include::{java-path}/lock/SynchronizedLock.java[lines=23..25]
+----
+. 类锁
++
+[source,java]
+----
+include::{java-path}/lock/SynchronizedLock.java[lines=29..31]
+----
+使用该类的字节码对象作为锁的线程公用这一把锁
+. 在方法上使用 +
+非静态方法上的Synchronized使用的是对象锁 +
+静态方法上的Synchronized使用的是类锁
+. 其他特性
+.. 多个线程都定义相同的字符串常量(如: "abc")作为锁时, 拿的是同一个锁.
+.. Synchronized具有重入特性
++
+[source,java]
+----
+include::{java-path}/lock/SynchronizedLock.java[lines=8..20]
+----

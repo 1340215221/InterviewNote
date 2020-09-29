@@ -1,14 +1,29 @@
 
 
 ==== 容器对比
+常用集合有 _ArrayList,LinkedList,HashSet,TreeSet_
 
 
-.List
-. 常见的有ArrayList,
+.元素特点对比
+[cols="2,1,1,1"]
+|===
+|数组
+|有序footnote:[存入顺序和遍历顺序一致]
+|可重复
+|允许null
 
+|链表
+|有序
+|可重复
+|允许null
 
+|红黑树
+|无序footnote:[存入顺序和遍历顺序不同, 有特殊的排序规则]
+|不可重复
+|不允许null
 
-.Set
-. 常见的有HashSet, TreeSet
-. 无序
-. 元素唯一
+|哈希
+|无序
+|不可重复
+|允许null
+|===

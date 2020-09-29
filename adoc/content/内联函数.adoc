@@ -1,0 +1,31 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+==== 内联函数
+
+
+.适用场景
+. 方法内容简单时, 用来取消不必要的中间层
+. 在 Replace Method with Method Object 前使用.
+
+.源码
+[source ,java]
+-----
+include::{java-path}/refactor/InlineMethod.java[lines=14..20]
+-----
+
+.idea操作
+快捷键 `ctrl + alt + N` .
+
+.重构
+[source ,java]
+-----
+include::{java-path}/refactor/InlineMethod.java[lines=10..12]
+-----
+
+==== 内联临时变量
+
+.适用场景
+- 临时变量仅被赋值一次, 且初始化操作非常简单明了
+

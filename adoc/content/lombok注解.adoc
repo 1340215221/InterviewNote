@@ -1,0 +1,50 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+=== lombok注解
+
+.@NonNull
+注解成员变量, 通过lombok生成的方法对该成员变量赋值时, 如果赋空值会抛出空指针异常.;;
+注解方法参数, 调用方法时, 对该参数传入空值会抛出空指针异常;;
+如何配置抛出自定义异常?;;
+todo
+
+.@Data
+为成员变量生成 getter,setter,toString,hashCode 方法
+
+.@Getter
+- 注解成员变量, 自动生成getter方法
+- 参数 `onMethod` +
+可以在生成的方法上添加注解
+
+[source, java]
+----
+include::{java-path}/lombok/GetterAddAnn.java[lines=8..19]
+----
+
+.@Accessors
+配置生成的 getter,settter 方法;;
+参数 `chain`;;
+setter方法是否返回 `this`
+[source, java]
+----
+include::{java-path}/lombok/SetReturnThis.java[lines=6..13]
+----
+
+.@RequiredArgsConstructor
+生成由所有被 `@NonNull` 注解的成员变量为参数的构造方法;;
+没有任何被 `@NonNull` 注解的成员变量时, 等效与 `@NoArgsConstructor`;;
+[source, java]
+----
+include::{java-path}/lombok/CreateBean.java[lines=6..15]
+----
+
+.@Delegate
+对象的代理模式, 实现对象扁平化;;
+参数 `types`;;
+类型为 `接口`, 只实现接口中定义的方法
+[source, java]
+----
+include::{java-path}/lombok/FlatObject.java[lines=10..25]
+----

@@ -1,0 +1,96 @@
+
+
+===== 分组查询
+
+
+.使用 `$$ROOT` 分组后获得文档所有字段的数据
+. 数据源
++
+[source,js]
+----
+{
+    _id: ObjectId('5e7854b0e21b848a5c9e1e13')
+    name: 'Nbcc6944797d74b6887f7d25e8d05204e',
+    $processId: '5e7854abe833c7632aedc2a1',
+    "sychThingsIds" : [
+        79298
+    ]
+}
+----
+
+. 查询语句
++
+[source,js]
+----
+db.getCollection('wf_historyorder').aggregate([{
+    '$match': {
+        name: 'Nbcc6944797d74b6887f7d25e8d05204e'
+    }
+},
+{
+    '$group': {
+        _id: "$processId",
+        obj: {
+            "$first": "$$ROOT"
+        }
+    }
+}])
+----
+
+. 查询结果
++
+[source,js]
+----
+{
+    _id: '5e7854abe833c7632aedc2a1',
+    obj: {
+        _id: ObjectId('5e7854b0e21b848a5c9e1e13')
+        name: 'Nbcc6944797d74b6887f7d25e8d05204e',
+        '$processId': '5e7854abe833c7632aedc2a1',
+        "sychThingsIds" : [
+            79298
+        ]
+    }
+}
+----
+
+
+.`$unwind` 和 `$$ROOT` 结合使用时, 已经被打散的数组只返回其中一个元素
+. 查询语句
++
+[source,js]
+----
+db.getCollection('wf_historyorder').aggregate([
+{
+    '$match': {
+        name: 'Nbcc6944797d74b6887f7d25e8d05204e'
+    },
+{
+    '$unwind':'$sychThingsIds'
+},
+{
+    '$group': {
+        _id: "$processId",
+        obj: {
+            "$first": "$$ROOT"
+        }
+    }
+}])
+----
+
+. 查询结果 +
+`sychThingsIds` 数组已经被打散了, 只返回了其中一个元素
++
+[source,js]
+----
+{
+    _id: '5e7854abe833c7632aedc2a1',
+    obj: {
+        _id: ObjectId('5e7854b0e21b848a5c9e1e13')
+        name: 'Nbcc6944797d74b6887f7d25e8d05204e',
+        $processId: '5e7854abe833c7632aedc2a1',
+        "sychThingsIds" : 79298
+    }
+}
+----
+

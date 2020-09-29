@@ -1,0 +1,19 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+===== 悲观锁
+
+
+.重入锁
+[source, java]
+----
+include::{java-path}/lock/PessimisticLock.java[lines=16..19]
+----
+
+.CountDownLatch
+[source,java]
+----
+include::{java-path}/lock/PessimisticLock.java[lines=26..29]
+----
+

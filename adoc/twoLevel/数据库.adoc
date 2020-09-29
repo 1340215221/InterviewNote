@@ -3,24 +3,24 @@
 == 数据库
 
 
-=== sql
+=== mysql
+
+
+include::../content/三范式.adoc[]
 
 
 ==== sql语句书写
 
 
 ==== sql语句优化
+//todo
+//B+ 树索引机制和优化策略
+//数据库锁
+//索引原则
+//分库分表
 
 
-==== 事务和隔离级别
-
-
-// todo
-.事务 ACID 特性
-. 原子性
-. 一致性
-. 隔离性
-. 持久性
+include::../content/事务和隔离级别.adoc[]
 
 
 ==== 索引
@@ -32,10 +32,16 @@
 ==== 增删改查
 
 
+include::../content/分组查询.adoc[]
+
+
 ==== 与sql区别
 
 
 ==== 索引
+
+
+include::../content/_mongo__索引优化.adoc[]
 
 
 ==== 查询优化
@@ -51,3 +57,9 @@
 
 
 ==== 事务
+
+
+==== 开发中遇到的问题
+
+
+include::../content/ObjectId在json转化时的问题.adoc[]

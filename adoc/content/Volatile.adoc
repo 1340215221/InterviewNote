@@ -1,0 +1,7 @@
+
+
+===== Volatile
+
+
+volatile使变量在多线程可见. 并不具备同步能力, 性能要高于Synchronized.
+new AtomicInteger(10)调用它的方法操作时具有原子性, 但并不保证多个操作的原子性.

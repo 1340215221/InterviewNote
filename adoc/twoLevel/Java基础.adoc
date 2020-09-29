@@ -11,6 +11,10 @@ include::../content/接口与抽象类的区别.adoc[]
 
 include::../content/基本类型.adoc[]
 
+include::../content/封装类型的缓存.adoc[]
+
+include::../content/try自动关闭资源.adoc[]
+
 
 === 容器
 
@@ -57,4 +61,43 @@ include::../content/创建线程的方式.adoc[]
 
 include::../content/线程通讯方式.adoc[]
 
-include::../content/锁.adoc[]
+
+==== 锁
+
+
+include::../content/Synchronized.adoc[]
+
+
+include::../content/Volatile.adoc[]
+
+
+include::../content/Synchronized与Volatile的区别.adoc[]
+
+
+include::../content/悲观锁.adoc[]
+
+
+//todo
+//读写锁
+//新读写锁(1.8防止写线程饥饿)
+//cas
+//乐观锁与悲观锁
+
+
+=== 队列
+//单容器队列
+//阻塞队列与非阻塞队列
+//有界队列与无界队列
+
+=== 线程
+//创建线程的方式
+//线程通信的方式
+
+=== IO
+=== 反射
+//创建对象的方法
+
+=== 序列化
+//例子
+//序列化相关的方法
+//用途

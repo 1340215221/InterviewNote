@@ -1,0 +1,22 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+==== 查询代替临时变量
+
+
+.原始代码
+[source, java]
+----
+include::{java-path}/refactor/ReplaceTempWithQuery.java[lines=21..26]
+----
+
+.idea操作
+. idea重构快捷键 `ctrl + shift + alt + T`
+. 选择 `ReplaceTempWithQuery`
+
+.重构后
+[source, java]
+----
+include::{java-path}/refactor/ReplaceTempWithQuery.java[lines=9..13]
+----
