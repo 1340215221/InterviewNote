@@ -1,0 +1,57 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+:test-java-path: ../../maven/src/test/java/com/rh/code
+
+
+=== mock测试
+
+
+.对一个对象或其父类的私有成员变量赋值
+[source,java]
+----
+/* 1. user的父类 */
+
+include::{test-java-path}/mock/HandleSuperPrivateField.java[lines=20..21]
+
+/* 2. user类 */
+
+include::{test-java-path}/mock/HandleSuperPrivateField.java[lines=25]
+
+/* 3. 测试类 */
+// 修改 user.name 的值为 "wy"
+
+include::{test-java-path}/mock/HandleSuperPrivateField.java[lines=10..14]
+----
+
+=== PowerMock
+Mock增强
+
+.抑制父类方法的执行
+[source%nowrap,groovy]
+----
+/* 设置测试类具有mock目标类的环境 */
+
+include::{test-java-path}/mockito/PowerMockitoTest.groovy[lines=16..17]
+
+/* 抑制方法名为 method1 的方法, 使其不执行 */
+
+include::{test-java-path}/mockito/PowerMockitoTest.groovy[lines=49..51]
+----
+
+=== SpringTest中的Mock
+
+.Http请求测试
+[source%nowrap, groovy]
+----
+/* 1. contraller接口 */
+
+include::{java-path}/contraller/MockContraller.java[lines=14..18]
+
+/* 2. test类mock请求参数 */
+
+include::{test-java-path}/mockito/MockHttpTest.groovy[lines=24..37]
+
+/* 3. test类验证返回结果 */
+
+include::{test-java-path}/mockito/MockHttpTest.groovy[lines=40..47]
+----

@@ -1,0 +1,21 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+===== ObjectId在json转化时的问题
+
+
+.ObjectId在进行json转换时, 会被处理成对象json字符串
+[source%nowrap,groovy]
+----
+/* 1. 聚合查询, 从mong中查到的数据 */
+include::{java-path}/mongo/id/ObjectIdToJSONDemo.groovy[lines=17..21]
+
+/* 将查询结果 obj 转为json字符串, 再转到实体类中 */
+include::{java-path}/mongo/id/ObjectIdToJSONDemo.groovy[lines=23]
+
+/* _id此时存的是process对象的json字符串 */
+include::{java-path}/mongo/id/ObjectIdToJSONDemo.groovy[lines=25]
+----
+
+
