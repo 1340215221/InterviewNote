@@ -3,7 +3,7 @@
 == Java基础
 
 
-=== Java基本特性
+=== Java特性
 
 include::../content/Java基本特性.adoc[]
 

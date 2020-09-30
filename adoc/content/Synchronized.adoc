@@ -17,7 +17,7 @@ oracle的undo表的一致性:
 一个类里两个方法都有Synchronized, 其中一个方法可以调用另一个方法.
 
 ----
-在写储存过程, 批量批量处理数据时, 在遇到执行失败了, 要有异常日志. for循环体内, 要有begin end exception. 不写begin和end, 不能写exception.
+在写储存过程, 批量处理数据时, 在遇到执行失败了, 要有异常日志. for循环体内, 要有begin end exception. 不写begin和end, 不能写exception.
 ----
 
 
