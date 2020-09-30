@@ -26,13 +26,13 @@ oracle的undo表的一致性:
 +
 [source,java]
 ----
-include::{java-path}/lock/SynchronizedLock.java[lines=23..25]
+include::{java-path}/lock/synchronize/SynBaseDemo.java[lines=23..25]
 ----
 . 类锁
 +
 [source,java]
 ----
-include::{java-path}/lock/SynchronizedLock.java[lines=29..31]
+include::{java-path}/lock/synchronize/SynBaseDemo.java[lines=29..31]
 ----
 使用该类的字节码对象作为锁的线程公用这一把锁
 . 在方法上使用 +
@@ -44,5 +44,17 @@ include::{java-path}/lock/SynchronizedLock.java[lines=29..31]
 +
 [source,java]
 ----
-include::{java-path}/lock/SynchronizedLock.java[lines=8..20]
+include::{java-path}/lock/synchronize/SynBaseDemo.java[lines=8..20]
 ----
+.. 当执行的加锁代码块不相同, 但是需要获取的锁相同时, 就需要竞争锁资源
++
+[source,java]
+----
+include::{java-path}/lock/synchronize/SynMethodLockDemo.java[lines=6..41]
+----
+* 证明: 执行 `run1()` 和 `run2()` 需要抢竞争资源
+** `run1()` 执行暂停时, `run2()` 没有执行
+** 证明了两个线程抢的不是CPU资源
+** 实际执行情况为: 执行 `run1()` 的线程抢到锁后, 执行 `run2()` 的线程等待获取锁资源
+* 执行加锁代码块时, 必须要先获取锁资源 +
+两个线程执行两个加锁的代码块, 就算代码块不同, 也会发生阻塞现象

@@ -1,12 +1,12 @@
-package com.rh.code.lock;
+package com.rh.code.lock.synchronize;
 
 /**
  * synchronized锁
  */
-public class SynchronizedLock {
+public class SynBaseDemo {
 
     public static void main(String[] args) {
-        SynchronizedLock demo = new SynchronizedLock();
+        SynBaseDemo demo = new SynBaseDemo();
         demo.synch2();
     }
 
@@ -26,7 +26,7 @@ public class SynchronizedLock {
     }
 
     public void syncClassLock() {
-        synchronized (SynchronizedLock.class) {
+        synchronized (SynBaseDemo.class) {
             //代码块
         }
     }
