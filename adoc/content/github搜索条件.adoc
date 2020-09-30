@@ -1,0 +1,37 @@
+
+
+=== github搜索条件
+
+
+.搜索条件
+[cols="2,3,5",options="header"]
+|===
+|筛选条件 |描述 |例子
+
+|name
+|从名字中搜索
+|in:name spring boot
+
+|readme
+|在readme中进行匹配
+|in:readme spring cloud
+
+|description
+|在描述里面搜索
+|in:description 微服务
+
+|stars
+|活跃度(下载多)
+|stars:>3000
+
+|language
+|选择语言
+|language:java
+
+|pushed
+|最后更新时间筛选
+|pushed:>2019-09-03
+
+2+^|组合使用例子
+|in:description 微服务 pushed:>2019-09-03
+|===
