@@ -54,27 +54,24 @@ include::../content/类的加载.adoc[]
 include::../content/对象的创建.adoc[]
 
 
+==== 锁
+
+
+include::../content/Synchronized.adoc[]
+
+include::../content/Volatile.adoc[]
+
+include::../content/Synchronized与Volatile的区别.adoc[]
+
+include::../content/悲观锁.adoc[]
+
+
 === 多线程和并发
 
 
 include::../content/创建线程的方式.adoc[]
 
 include::../content/线程通讯方式.adoc[]
-
-
-==== 锁
-
-
-include::../content/Synchronized.adoc[]
-
-
-include::../content/Volatile.adoc[]
-
-
-include::../content/Synchronized与Volatile的区别.adoc[]
-
-
-include::../content/悲观锁.adoc[]
 
 
 //todo

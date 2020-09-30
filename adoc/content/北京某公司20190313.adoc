@@ -1,6 +1,4 @@
 
-:config-resources: ../../config-resources
-
 
 === 北京某公司20190313
 
