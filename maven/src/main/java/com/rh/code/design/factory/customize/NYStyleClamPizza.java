@@ -1,4 +1,6 @@
 package com.rh.code.design.factory.customize;
 
-public class NYPizzaClamPizza {
+import com.rh.code.design.factory.orginal2.Pizza;
+
+public class NYStyleClamPizza extends Pizza {
 }

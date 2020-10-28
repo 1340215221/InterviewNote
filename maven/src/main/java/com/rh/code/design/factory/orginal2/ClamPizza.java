@@ -1,4 +1,4 @@
 package com.rh.code.design.factory.orginal2;
 
-public class ClamPizza {
+class ClamPizza extends Pizza {
 }

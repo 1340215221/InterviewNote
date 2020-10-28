@@ -1,4 +1,7 @@
 package com.rh.code.design.factory.orginal1;
 
-public class PepperoniPizza {
+/**
+ * 腊肠披萨
+ */
+class PepperoniPizza extends Pizza {
 }

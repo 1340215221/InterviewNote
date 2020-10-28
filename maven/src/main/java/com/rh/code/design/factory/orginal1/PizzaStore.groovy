@@ -9,9 +9,9 @@ class PizzaStore {
      * 订购披萨
      */
     Pizza orderPizza(String type) {
-        Pizza pizza;
+        Pizza pizza = null;
 
-        // 制作披萨
+        // 制作披萨 todo 这里是变化的部分
         if (type.equals("cheese")) {
             pizza = new CheesePizza();
         }else if (type.equals("greek")) {

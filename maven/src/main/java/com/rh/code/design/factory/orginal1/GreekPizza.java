@@ -1,4 +1,7 @@
 package com.rh.code.design.factory.orginal1;
 
-public class GreekPizza {
+/**
+ * 希腊披萨
+ */
+class GreekPizza extends Pizza {
 }
