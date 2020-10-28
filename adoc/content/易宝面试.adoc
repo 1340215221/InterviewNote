@@ -4,6 +4,7 @@
 
 
 - 多线程通讯方式?
+. synchronized与wait&notify
 - syn与lock锁区别
 - left join和right join区别
 - spring bean生命周期

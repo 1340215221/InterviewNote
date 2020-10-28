@@ -1,0 +1,53 @@
+
+:java-path: ../../spring-boot-war/src/main/java/com/rh/code
+
+
+==== SpringBoot打包部署
+
+
+.打成可以执行的jar包
+. SpringBoot默认Maven配置
++
+.pom.xml
+[source,xml]
+----
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+----
+. 启动命令
++
+[source,shell script]
+----
+java -jar ething.jar
+----
+
+
+.打成war包,部署到tomcat
+. Maven配置, 设置打为war包
++
+.pom.xml
+[source,xml]
+----
+include::../../spring-boot-war/pom.xml[lines=14]
+----
+. 启动类修改
++
+.XXApplication.java
+[source,java]
+----
+include::{java-path}/MyApplication.java[lines=9..14]
+----
+. 将war包放到tomcat的webapp目录下
+
+ tomcat启动时会默认启动webapp下的所有项目
+
+. 解压war包
+. 修改解压后的项目名为ROOT
+
+ tomcat默认在8080暴漏ROOT目录下的服务
+
+. 启动tomcat目录下的 `bin/startup.bat`

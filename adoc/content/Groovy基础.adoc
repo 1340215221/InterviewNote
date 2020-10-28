@@ -1,0 +1,29 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+:test-java-path: ../../maven/src/test/java/com/rh/code
+
+
+=== Groovy基础
+
+
+==== 与Java的区别
+
+. 创建数组用中括号表示, 如: `[1,3,6]`
+. 创建Map也可以像创建数组一样简写, 这是一个空数组 `[:]`
+. Groovy的闭包可以是对象, 也可以作为注解的Class类型参数; Java中的lambda是对象
+
+==== 语法特性
+
+. 继承了 `GroovyTestCase` 的测试类, 测试方法名要以 `test_` 开头
+. 可以使用这样的方式创建对象
++
+[source, groovy]
+----
+/** 1. 要创建的对象 */
+
+include::{java-path}/groovy/Homen.java[lines=8..11]
+
+/** 2. 创建一个Homen对象, 并测试赋值成功 */
+
+include::{test-java-path}/groovy/MapTest.groovy[lines=68..70]
+----
