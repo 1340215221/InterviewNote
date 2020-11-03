@@ -2,9 +2,3 @@
 
 == 测试文件
 
-
-adfasdf
-
-
-
-include::../content/hei.adoc[]
