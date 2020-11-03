@@ -17,6 +17,13 @@ todo
 - 注解成员变量, 自动生成getter方法
 - 参数 `onMethod` +
 可以在生成的方法上添加注解
+- 参数 `lazy` , 属性延迟赋值
+. 加了 `lazy` 的@Getter只可以用于 `private final` 修饰的属性
+. 赋值操作通常是一个复杂计算的方法
+. 只在调用 `get` 方法时进行赋值, 且只赋值一次
+. 注意: +
+没有调用过被注解属性的 `get` 方法时, 直接使用属性的引用, 会返回 `null`. +
+之后调用属性的 `get` 方法后, 依然会赋值
 
 [source, java]
 ----
@@ -48,3 +55,25 @@ include::{java-path}/lombok/CreateBean.java[lines=6..15]
 ----
 include::{java-path}/lombok/FlatObject.java[lines=10..25]
 ----
+
+
+.@Value
+- 注解在类上, 给非静态成员都添加final修饰
+- 自动为所有final成员变量生成构造方法
+- 参数 `staticConstructor` 用来改变构造方式
+. 自动为final修饰的变量生成一个私有的构造方法
+. 自动生成一个静态方法用来构建实例
+. 参数值为静态方法的方法名
+
+
+
+.@Cleanup
+- 用于自动关闭资源, 注释于临时变量
+- 默认会生成 `final` 块, 并调用close方法
+- 参数 `value` 可以修改自动调用的方法名 +
+. 在注解变量使用完成后, 自动调用该方法
+. 设置自定义方法不能自动处理方法声明的异常
+
+
+
+
