@@ -46,3 +46,5 @@ include::../content/include语法.adoc[]
 
 
 include::../content/待解决问题.adoc[]
+
+include::../content/分析拆分.adoc[]

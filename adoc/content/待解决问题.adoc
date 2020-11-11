@@ -6,7 +6,8 @@
 .待解决问题
 . 安全删除include
 .. 如果include指向文件中也有include语句, 没有处理
-. 没有修改记录时, 仍可以git提交
+. `alt + del` 不是include行时, 应当不出现询问弹窗
+
 
 
 
