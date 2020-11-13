@@ -4,7 +4,7 @@ package com.rh.code.design.observer.customize;
  * 豆浆
  * 装饰类
  */
-public class Soy extends CondimentDecorator {
+class Soy extends CondimentDecorator {
 
     private Beverage beverage;
 

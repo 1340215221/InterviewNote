@@ -3,7 +3,7 @@ package com.rh.code.design.observer.customize;
 /**
  * 星光咖啡
  */
-public class StarbuzzCoffee {
+class Main {
 
     public static void main(String[] args) {
         Espresso espresso = new Espresso();

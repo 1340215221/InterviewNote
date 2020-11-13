@@ -3,7 +3,7 @@ package com.rh.code.design.observer.customize;
 /**
  * 装饰者
  */
-public class Mocha extends CondimentDecorator {
+class Mocha extends CondimentDecorator {
 
     /**
      * 饮料对象

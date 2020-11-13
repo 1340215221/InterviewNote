@@ -4,7 +4,7 @@ package com.rh.code.design.decoration.customize;
  * 自定义观察者接口, 实现观察者模式
  * 例子: 气象站
  */
-public class WeatherStation {
+public class Main {
 
     public static void main(String[] args) {
         // 创建主题

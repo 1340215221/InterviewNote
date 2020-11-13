@@ -1,4 +1,4 @@
-package com.rh.code.design.factory.orginal2;
+package com.rh.code.design.factory.orginal3;
 
 /**
  * 披萨 简单工厂

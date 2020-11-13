@@ -1,13 +1,11 @@
 package com.rh.code.design.factory.customize;
 
-import com.rh.code.design.factory.orginal2.Pizza;
-
 /**
  * 披萨店
  * 工厂方法, 对具体披萨类的关联由子类决定和依赖
  * 在父类中, 只定义具体的流程, 具体不同的部分推到子类中实现
  */
-public abstract class PizzaStore {
+abstract class PizzaStore {
 
     /**
      * 订购披萨

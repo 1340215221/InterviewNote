@@ -1,11 +1,11 @@
-package com.rh.code.design.factory.orginal2
+package com.rh.code.design.factory.orginal3;
 
 /**
  * 披萨店
  */
 class PizzaStore {
 
-    SimplePizzaFactory factory;
+    private SimplePizzaFactory factory;
 
     public PizzaStore(SimplePizzaFactory factory) {
         this.factory = factory;

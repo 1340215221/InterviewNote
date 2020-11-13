@@ -11,7 +11,7 @@ import java.io.InputStream;
  * jdk中io类中大量使用装饰者
  * 对jdk中的FilterInputStream抽象装饰者编写一个自己的装饰者
  */
-public class LowerCaseInputStream extends FilterInputStream {
+class LowerCaseInputStream extends FilterInputStream {
 
     public LowerCaseInputStream(InputStream in) {
         super(in);

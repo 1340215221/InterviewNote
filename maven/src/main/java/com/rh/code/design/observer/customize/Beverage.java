@@ -3,7 +3,7 @@ package com.rh.code.design.observer.customize;
 /**
  * 饮料 抽象类
  */
-public abstract class Beverage {
+abstract class Beverage {
 
     protected String description = "Unknown Beverage";
 

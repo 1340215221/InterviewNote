@@ -9,7 +9,7 @@ import java.io.InputStream;
  * 测试自定义的io类
  * 需要在项目目录下创建一个text.txt文件, 输入大写的内容
  */
-public class InputTest {
+class Main {
 
     public static void main(String[] args) {
         InputStream in = null;

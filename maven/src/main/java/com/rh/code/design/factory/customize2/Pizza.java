@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * 披萨 抽象类
  */
-public abstract class Pizza {
+abstract class Pizza {
     String name;
     String dough;
     String sauce;

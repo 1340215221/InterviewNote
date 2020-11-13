@@ -1,4 +1,4 @@
-package com.rh.code.design.factory.orginal1
+package com.rh.code.design.factory.orginal1;
 
 /**
  * 披萨店
@@ -8,7 +8,7 @@ class PizzaStore {
     /**
      * 订购披萨
      */
-    Pizza orderPizza(String type) {
+    public Pizza orderPizza(String type) {
         Pizza pizza = null;
 
         // 制作披萨 todo 这里是变化的部分
