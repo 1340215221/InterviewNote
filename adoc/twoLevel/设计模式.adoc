@@ -6,9 +6,9 @@
 === +<<HeadFirst设计模式>>+
 
 
-include::../content/观察者模式.adoc[]
-
 include::../content/设计原则.adoc[]
+
+include::../content/观察者模式.adoc[]
 
 include::../content/装饰者模式.adoc[]
 
