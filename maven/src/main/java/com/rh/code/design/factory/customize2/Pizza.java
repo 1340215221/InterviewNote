@@ -1,33 +1,38 @@
 package com.rh.code.design.factory.customize2;
 
-import java.util.ArrayList;
+import static com.rh.code.design.factory.customize2.PizzaIngredientFactory.*;
 
 /**
- * 披萨 抽象类
+ * 披萨 抽象
+ *
+ * 在成员变量中声明组成需要的原料
  */
 abstract class Pizza {
+    /**
+     * 披萨组成的原料
+     */
     String name;
-    String dough;
-    String sauce;
-    ArrayList toppings = new ArrayList();
+    Dough dough;
+    Sauce sauce;
+    Veggies veggies[];
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clams clams;
 
-    void prepare() {
-        System.out.println("prepare");
-    }
+    /**
+     * 准备
+     * 在这里收集披萨原料
+     */
+    abstract void prepare();
 
-    void back() {
-        System.out.println("back");
-    }
+    void bake() {}
 
-    void cut() {
-        System.out.println("cut");
-    }
+    void cut() {}
 
-    void box() {
-        System.out.println("box");
-    }
+    void box() {}
 
-    public String getName() {
-        return name;
-    }
+    void setName() {}
+
+    // todo
+    public String toString() { return ""; }
 }
