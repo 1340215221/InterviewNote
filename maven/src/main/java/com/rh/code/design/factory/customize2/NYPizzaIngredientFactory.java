@@ -54,4 +54,11 @@ class NYPizzaIngredientFactory implements PizzaIngredientFactory {
     private class SlicedPepperoni implements Pepperoni {}
 
     private class FreshClams implements Clams {}
+
+    /**
+     * 方便打印披萨原料的接口
+     */
+    private interface ToString {
+        String
+    }
 }

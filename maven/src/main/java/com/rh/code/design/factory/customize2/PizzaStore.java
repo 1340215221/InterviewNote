@@ -10,4 +10,19 @@ abstract class PizzaStore {
      */
     protected abstract Pizza createPizza(String item);
 
+    /**
+     * 订购披萨
+     */
+    public Pizza orderPizza(String item) {
+        Pizza pizza = createPizza(item);
+        if (pizza == null) {
+            return null;
+        }
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        return pizza;
+    }
+
 }

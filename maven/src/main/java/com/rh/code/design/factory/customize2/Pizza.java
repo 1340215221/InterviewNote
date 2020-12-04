@@ -1,5 +1,7 @@
 package com.rh.code.design.factory.customize2;
 
+import lombok.Getter;
+
 import static com.rh.code.design.factory.customize2.PizzaIngredientFactory.*;
 
 /**
@@ -7,6 +9,7 @@ import static com.rh.code.design.factory.customize2.PizzaIngredientFactory.*;
  *
  * 在成员变量中声明组成需要的原料
  */
+@Getter
 abstract class Pizza {
     /**
      * 披萨组成的原料
