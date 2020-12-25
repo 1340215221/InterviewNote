@@ -5,3 +5,8 @@
 
 
 include::../../maven/src/main/java/com/rh/code/design/decoration/customize/CurrentConditionsDisplay.java[6..35]
+
+
+
+
+111
