@@ -15,6 +15,8 @@ include::../content/封装类型的缓存.adoc[]
 
 include::../content/try自动关闭资源.adoc[]
 
+include::../content/String.adoc[]
+
 
 === 容器
 
@@ -52,6 +54,8 @@ include::../content/JVM调优.adoc[]
 include::../content/类的加载.adoc[]
 
 include::../content/对象的创建.adoc[]
+
+include::../content/常见异常.adoc[]
 
 
 ==== 锁
