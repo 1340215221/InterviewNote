@@ -3,7 +3,7 @@ package com.rh.code.design.observer.customize;
 /**
  * 浓缩咖啡
  */
-public class Espresso extends Beverage {
+class Espresso extends Beverage {
 
     public Espresso() {
         description = "Espresso";

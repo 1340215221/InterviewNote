@@ -3,7 +3,7 @@ package com.rh.code.design.observer.customize;
 /**
  * 奶泡
  */
-public class Whip extends CondimentDecorator {
+class Whip extends CondimentDecorator {
 
     private Beverage beverage;
 

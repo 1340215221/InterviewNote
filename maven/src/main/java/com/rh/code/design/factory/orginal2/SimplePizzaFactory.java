@@ -3,7 +3,7 @@ package com.rh.code.design.factory.orginal2;
 /**
  * 披萨 简单工厂
  */
-public class SimplePizzaFactory {
+class SimplePizzaFactory {
 
     /**
      * 根据类型创建披萨对象
