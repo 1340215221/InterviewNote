@@ -4,4 +4,7 @@
 
 
 
+include::../../maven/src/main/java/com/rh/code/trycatch/TryAutoCloseResources.java[9..15]
+
+
 include::../../maven/src/main/java/com/rh/code/design/decoration/customize/CurrentConditionsDisplay.java[19..35]

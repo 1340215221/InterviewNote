@@ -15,6 +15,12 @@ include::../content/装饰者模式.adoc[]
 include::../content/工厂模式.adoc[]
 
 
+=== +<<HeadFirst设计模式>>+
+
+
+include::../content/设计模式入门.adoc[]
+
+
 === +<<重构>>+
 
 

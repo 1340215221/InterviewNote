@@ -7,6 +7,10 @@
 . 安全删除include
 .. 如果include指向文件中也有include语句, 没有处理
 . `alt + del` 不是include行时, 应当不出现询问弹窗
+. include java
+.. 可以打开多次java文件
+.. 打开的java文件失去焦点后, 光标就消失了
+.. 在java文件中只能使用快捷键标记一次, 第二次就没用了, 或光标消失了
 
 
 
