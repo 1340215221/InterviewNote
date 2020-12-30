@@ -3,3 +3,21 @@
 ==== String
 
 
+
+.两字符串相加的结果并不会添加到常量池
+----
+include::../../maven/src/main/java/com/rh/code/string/AddToConstantPool.java[lines=12..18]
+----
+
+
+
+.字符串计算编译期优化
+----
+include::../../maven/src/main/java/com/rh/code/string/AddToConstantPool.java[lines=23..29]
+----
+
+
+
+.String.intern()方法
+- 从常量池中获取等于该值的字符串对象
+- 如果常量池中不存在, 则将该对象的引用保存到常量池

@@ -59,6 +59,5 @@ class NYPizzaIngredientFactory implements PizzaIngredientFactory {
      * 方便打印披萨原料的接口
      */
     private interface ToString {
-        String
     }
 }
