@@ -4,9 +4,4 @@
 
 
 
-include::../../maven/src/main/java/com/rh/code/design/decoration/customize/CurrentConditionsDisplay.java[6..35]
-
-
-
-
-111
+include::../../maven/src/main/java/com/rh/code/string/AddToConstantPool.java[lines=13..17]
