@@ -26,6 +26,18 @@ include::../content/事务和隔离级别.adoc[]
 ==== 索引
 
 
+==== 高性能mysql
+
+
+include::../content/mysql索引.adoc[]
+
+include::../content/性能优化.adoc[]
+
+include::../content/mysql复制.adoc[]
+
+include::../content/mysql备份与恢复.adoc[]
+
+
 === mongodb
 
 
