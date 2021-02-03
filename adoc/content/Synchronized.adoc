@@ -2,7 +2,7 @@
 :java-path: ../../maven/src/main/java/com/rh/code
 
 
-==== Synchronized
+===== Synchronized
 
 
 Synchronized是同步的意思, 用于处理共享资源. +
