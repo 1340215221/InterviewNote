@@ -16,10 +16,6 @@ oracle的undo表的一致性:
 
 一个类里两个方法都有Synchronized, 其中一个方法可以调用另一个方法.
 
-----
-在写储存过程, 批量处理数据时, 在遇到执行失败了, 要有异常日志. for循环体内, 要有begin end exception. 不写begin和end, 不能写exception.
-----
-
 
 .Synchronized的使用方式
 . 对象锁
@@ -58,3 +54,23 @@ include::{java-path}/lock/synchronize/SynMethodLockDemo.java[lines=6..41]
 ** 实际执行情况为: 执行 `run1()` 的线程抢到锁后, 执行 `run2()` 的线程等待获取锁资源
 * 执行加锁代码块时, 必须要先获取锁资源 +
 两个线程执行两个加锁的代码块, 就算代码块不同, 也会发生阻塞现象
+
+
+.实战笔记
+. 调用wait()和notify()的地方必须都是加锁了的同步块
+.. 遇到的问题
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/lock/synchronize/SynchronizeAction.java[lines=13..25]
+----
+
+.. 解决办法 +
+虽然notifyAll()调用看起来在synchronized内包括着, 但实际上notifyAll()并没有在同步代码块中执行 +
+需要将notifyAll()也用synchronized包括起来
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/lock/synchronize/SynchronizeAction.java[lines=33..44]
+----
+重入锁ReentrantLock使用同理
