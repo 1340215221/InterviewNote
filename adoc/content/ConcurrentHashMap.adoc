@@ -3,6 +3,6 @@
 ==== ConcurrentHashMap
 
 
-. 底层是由多个Segment组成的, 每个Segment通过加锁保证了线程安全,
+. 底层是由多个`Segment`组成的, 每个`Segment`通过加锁保证了线程安全,
 锁的粒度更细性能更高
-. ConcurrentHashMap不允许null的key和value
+. `ConcurrentHashMap`不允许`null`的`key和value`

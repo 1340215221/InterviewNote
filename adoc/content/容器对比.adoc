@@ -1,7 +1,7 @@
 
 
 ==== 容器对比
-常用集合有 _ArrayList,LinkedList,HashSet,TreeSet_
+常用集合有_ArrayList,LinkedList,HashSet,TreeSet_
 
 
 .元素特点对比
