@@ -5,3 +5,6 @@
 
 
 include::../../maven/src/main/java/com/rh/code/string/AddToConstantPool.java[lines=13..17]
+
+
+test
