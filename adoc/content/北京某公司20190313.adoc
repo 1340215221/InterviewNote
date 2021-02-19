@@ -22,3 +22,5 @@ link:../content/SpringBoot打包部署.adoc[SpringBoot打包部署]
 ... 如, netstat -tunlp |grep 3306
 .. firewall-cmd --zone=public --add-port=80/tcp --permanent
 ... permanent为永久开启
+
+
