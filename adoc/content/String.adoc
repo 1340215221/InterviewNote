@@ -5,6 +5,7 @@
 
 
 .两字符串相加的结果并不会添加到常量池
+[source,java]
 ----
 include::../../maven/src/main/java/com/rh/code/string/AddToConstantPool.java[lines=12..18]
 ----
@@ -12,6 +13,7 @@ include::../../maven/src/main/java/com/rh/code/string/AddToConstantPool.java[lin
 
 
 .字符串计算编译期优化
+[source,java]
 ----
 include::../../maven/src/main/java/com/rh/code/string/AddToConstantPool.java[lines=23..29]
 ----

@@ -6,7 +6,7 @@
 - 多线程通讯方式?
 . synchronized与wait&notify
 - syn与lock锁区别
-- left join和right join区别
+- `left join`和`right join`区别
 - spring bean生命周期
 - 用过的设计模式
 - redis三大问题
