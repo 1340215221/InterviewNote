@@ -23,7 +23,7 @@
 . put()方法footnote:[实际调用ConcurrentHashMap.putVal()方法]
 .. 检查key或value是否为null
 .. 计算key的hash值
-.. 如果Node数组为空, 初始化initTable()
+.. 如果Node数组为空, 初始化`initTable()`
 .. 判断数组指定索引处是否为null
 ... 为null, new一个Node放入
 ... 不为null, 进入同步代码块(`synchronized`)
