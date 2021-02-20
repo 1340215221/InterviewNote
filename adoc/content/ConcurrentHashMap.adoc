@@ -8,3 +8,28 @@
 . `ConcurrentHashMap`不允许`null`的`key和value`
 
 
+.1.7和1.8中的区别
+. 参考文档https://blog.csdn.net/qq_41884976/article/details/89532816
+
+
+.1.8实现
+. 数据结构
+.. 使用_Node数组/链表/红黑树_
+.. Node数组用来存放链表或树的头节点
+.. 链表容量达到一定值时查询效率会降低, 会转换为红黑二叉树提高查询效率
+... 链表容量大于8时转换成红黑树, 红黑树容量小于6时转换为链表
+. 构造方法
+.. 检查设置容量值, 并没有创建Node数组
+. put()方法footnote:[实际调用ConcurrentHashMap.putVal()方法]
+.. 检查key或value是否为null
+.. 计算key的hash值
+.. 如果Node数组为空, 初始化initTable()
+.. 判断数组指定索引处是否为null
+... 为null, new一个Node放入
+... 不为null, 进入同步代码块(`synchronized`)
+.... 头结点的哈希值如果大于0, 说明是链表
+..... 在链表中查找如果有相同的元素直接覆盖, 返回旧值, 结束
+.... 判断节点类型如果为TreeBin, 说明是红黑树footnote:[也有说, 如果节点的hash值小于0, 即为红黑树的头节点]
+..... 调用`TreeBin.putTreeVal()`添加新节点
+.. 如果是链表结构, 判断容量如果超过阈值8, 转换为红黑树
+
