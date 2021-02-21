@@ -6,8 +6,104 @@
 - st怎么存储管理的
 - 发现服务器卡顿, 如何用jvm调优
 - jvm调优工具
+. VisualVM
+. 在jdk/bin/目录下的jvisualvm文件
 - 线程池线程不足
 - mongodb如何实现连表
++
+.用户表
+[source,mongodb]
+----
+users = [{
+  _id: ObjectId("5af2b2c6b138c267e414c072"),
+  uid: "uid000",
+  name: "小红",
+  age: 26
+}, {
+  _id: ObjectId("5af2b2c6b138c267e414c073"),
+  uid: "uid001",
+  name: "小芳",
+  age: 27
+}]
+----
+
+.订单表
+[source,mongodb]
+----
+orders = [{
+  _id: ObjectId("4af2b2c6b138c267e414c071"),
+  uid: "uid000",
+  product: "产品1",
+  money: 100
+}, {
+  _id: ObjectId("4af2b2c6b138c267e414c072"),
+  uid: "uid000",
+  product: "产品2",
+  money: 200
+}, {
+  _id: ObjectId("4af2b2c6b138c267e414c073"),
+  uid: "uid001",
+  product: "产品1",
+  money: 100
+}, {
+  _id: ObjectId("4af2b2c6b138c267e414c074"),
+  uid: "uid001",
+  product: "产品2",
+  money: 200
+}]
+----
+
+.连表语句
+[source,mongodb]
+----
+db.user.aggregate([{
+  $lookup: { // 左连接
+    from: "order", // 关联到order表
+    localField: "uid", // user 表关联的字段
+    foreignField: "uid", // order 表关联的字段
+    as: "orders"
+  }
+}]);
+----
+
+.连表结果
+[source,java]
+----
+users = [{
+  _id: ObjectId("5af2b2c6b138c267e414c072"),
+  uid: "uid000",
+  name: "小红",
+  age: 26,
+  orders: [{
+    _id: ObjectId("4af2b2c6b138c267e414c071"),
+    uid: "uid000",
+    product: "产品1",
+    money: 100
+  }, {
+    _id: ObjectId("4af2b2c6b138c267e414c072"),
+    uid: "uid000",
+    product: "产品2",
+    money: 200
+  }]
+}, {
+  _id: ObjectId("5af2b2c6b138c267e414c073"),
+  uid: "uid001",
+  name: "小芳",
+  age: 27,
+  orders: [{
+    _id: ObjectId("4af2b2c6b138c267e414c073"),
+    uid: "uid001",
+    product: "产品1",
+    money: 100
+  }, {
+    _id: ObjectId("4af2b2c6b138c267e414c073"),
+    uid: "uid001",
+    product: "产品1",
+    money: 200
+  }]
+}]
+----
+
 - redis分布式锁
 - gridfs文件多时如何提高文件的查询速度
 - mybatis和hibernate区别
