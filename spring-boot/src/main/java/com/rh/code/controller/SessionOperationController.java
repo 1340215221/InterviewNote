@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 
 /**
- * session cookie 测试
+ * 操作session 测试
  */
 @RestController
-public class SessionCookieController {
+public class SessionOperationController {
 
     /**
      * 设置session
