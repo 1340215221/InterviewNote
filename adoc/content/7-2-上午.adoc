@@ -5,6 +5,8 @@
 - springCloudAlibaba有了解吗
 - 容器除了docker有其他了解吗
 - java项目部署过程
+. springBoot的jar包, java -jar app.jar
+. war包,
 - 查看java进程
 - 查看端口号被那个应用监听着
 - 开启端口号
