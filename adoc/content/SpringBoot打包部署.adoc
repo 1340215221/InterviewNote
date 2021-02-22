@@ -33,13 +33,17 @@ java -jar ething.jar
 [source,xml]
 ----
 include::../../spring-boot-war/pom.xml[lines=14]
+
+include::../../spring-boot-war/pom.xml[lines=26..31]
 ----
 . 启动类修改
 +
 .XXApplication.java
 [source,java]
 ----
-include::{java-path}/MyApplication.java[lines=9..14]
+include::{java-path}/MyApplication.java[lines=9]
+
+include::{java-path}/MyApplication.java[lines=15..18]
 ----
 . 将war包放到tomcat的webapp目录下
 

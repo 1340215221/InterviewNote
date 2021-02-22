@@ -5,11 +5,31 @@
 - springCloudAlibaba有了解吗
 - 容器除了docker有其他了解吗
 - java项目部署过程
-. springBoot的jar包, java -jar app.jar
+. springBoot项目jar包启动, java -jar app.jar
 .. 启动时设置环境参数, java -jar app.jar -Dspring.profiles.active=prod
-. war包,
+. springBoot项目war包, 外部tomcat部署
+.. 配置pom.xml
++
+[source,xml]
+----
+<!-- 1. 打包类型为war -->
+include::../../spring-boot-war/pom.xml[lines=14]
+
+<!-- 2. 使tomcat插件失效 -->
+include::../../spring-boot-war/pom.xml[lines=27..31]
+----
+.. 配置启动类
++
+[source,java]
+----
+// 1. 继承SpringBootServletInitializer
+include::../../spring-boot-war/src/main/java/com/rh/code/MyApplication.java[lines=9]
+// 2. 重写configure()方法
+include::../../spring-boot-war/src/main/java/com/rh/code/MyApplication.java[lines=15..18]
+----
 - 查看java进程
-- 查看端口号被那个应用监听着
+- 查看端口号被哪个应用监听着
 - 开启端口号
 - 用命令在服务器之间传文件
-- integer和int在应用中的主要区别
+- Integer和int在应用中的主要区别
+int的值不能为null, Integer可以为null
