@@ -1,4 +1,8 @@
 package com.rh.code.design.singleton;
 
-public class EnumWay {
+/**
+ * 枚举 方式
+ */
+public enum EnumWay {
+    INSTANCE;
 }
