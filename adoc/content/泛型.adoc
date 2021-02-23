@@ -1,0 +1,77 @@
+
+
+==== 泛型
+
+
+. 泛型不能基本类型, 只能为对象
+. java运行期并不保存对象的泛型信息, 擦除泛型
+. java会在编译期检查代码的泛型类型是否正确, 如果错误则会编译失败
+
+
+.类上的泛型和方法上的泛型区别
+. 类上声明的泛型
+.. 是在类被继承, 或实例化时, 才能确定为具体的类型的
+. 方法上声明的泛型
+.. 是在方法被调用时, 才能确定为具体的类型的 +
+在被重写时, 是不能改变方法上声明的泛型的为具体的类型的
+
+
+
+===== 泛型擦除
+
+
+.证明: 运行时对象没有泛型信息
+. 可以通过反射给泛型为String的List添加一个数字, 而不会报错
+. 泛型类型在运行时为Object
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/generic/GenericErasureExample.java[lines=8..17]
+----
+
+
+.泛型与多态的冲突问题
+. 带泛型的类
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/generic/AbstractBean.java[lines=3..12]
+----
+. 带泛型的类编译后, 会变成这样
++
+[source,java]
+----
+public abstract class AbstractBean {
+    private Object value;
+
+    public Object getValue() {
+        return value;
+    }
+
+    public void setValue(Object value) {
+        this.value = value;
+    }
+}
+----
+. 继承带泛型的类
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/generic/BeanImpl.java[lines=5..15]
+----
+.. 与重写重载冲突问题
+... 实现类实际应该继承了`public void setValue(Object  value)`方法 +
+那么实现类中的`public void setValue(Date value)`显示为重写`@Override`, 而为什么不是重载呢?
+.... 因为实际在class文件中一共生成了4个方法. 继承的set方法在实现中, 调用了我们写的重载的方法
++
+[source,java]
+----
+public Date getValue() {...}
+public void setValue(Date value) {...}
+public Object getValue() {...} // 在实现中调用了我们重写的getValue方法
+public void setValue(Object value) {...} // 在实现中调用了我们重写的setValue方法
+----
+.. 与协变的问题
+... java中是不允许一个类中存在两个签名相同的方法 +
+`Date getValue()`与`Object getValue()`
+... 而虚拟机里是允许的, 虚拟机通过_返回值/方法名/参数列表_来区分不同方法的

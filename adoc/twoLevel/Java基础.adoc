@@ -17,6 +17,8 @@ include::../content/try自动关闭资源.adoc[]
 
 include::../content/String.adoc[]
 
+include::../content/泛型.adoc[]
+
 
 === 容器
 
