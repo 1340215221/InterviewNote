@@ -26,12 +26,131 @@ include::../../maven/src/main/java/com/rh/code/algorithm/BinarySearch.java[lines
 . 在group by子句中的字段, 可以直接出现在select子句中 +
 在group by子句未出现的字段, 在select子句中只能出现在分组函数中
 - springboot和spring有什么区别
-- yaml和properent那个优先级高
-- ucp和tcp区别, tcp的应用有哪些
+. 内嵌Tomcat可将项目打包为可执行jar包
+. 提供可简化配置的`starter`项目, 自动配置spirngBean, 无需xml配置
+. 使用`spring-boot-starter-parent`依赖提供了主流框架的版本管理, 可以避免一些依赖冲突的问题
+- yaml和properties那个优先级高
+. 加载顺序: yaml > properties
+. 后加载数据的会把先加载的覆盖掉
+- udp和tcp区别, tcp的应用有哪些 +
+https://blog.csdn.net/zhang6223284/article/details/81414149[参考文档]
+. tcp是基于连接的运输层协议. udp是无连接的, 发送数据前不需要建立连接
+. udp比tcp结构简单, 占用资源少, 传输效率高
+. tcp是面向字节流, udp是基于数据报
+. tcp能保证数据的正确性和顺序性 +
+udp可能丢包, 且不能保证数据的顺序不改变
+. tcp是全双工, udp支持_一对一/一对多/多对多_
+. tcp应用场景
+.. Http请求, Dubbo框架
+. udp应用场景
+.. 实时性要求比较高, 允许丢包的情况, 可用资源较少
+.. 直播, 实时游戏, 物联网
 - redis应用场景
+. 缓存不常变的数据, 提高查询速度
+. 在分布式系统中可作为一个共享数据库, 比如: 实现共享session
+. 利用它的单线程特性, 在分布式系统中做_计数器/分布式锁_
 - redis持久化策略
+. RDB (数据快照模式)
+.. 定时将内存中的全量数据写入硬盘
+... 适用于备份
+... 在宕机时会遗失定时间隔之间的数据
+. AOF (追加模式)
+.. 将修改操作记录到硬盘日志中
+... 默认fsync策略为每秒fsync一次, 有丢失最近一秒内写入数据的风险
+... 数据恢复时候AOF比RDB慢 +
+由于记录的是操作日志, AOF文件通常会大于RDB文件
+.. AOF重写
+... AOF文件追加内容会使文件越来越大, 当文件过大时, 会创建一个新文件进行重写, 压缩文件.
+同时旧文件依然会追加日志. 当重写完成后, 切换到新文件追加日志
+... 重写是绝对安全的
+... redis4.0增加混合持久化 +
+在AOF重写时, 将当前内存全量写入AOF文件, 再将重写缓冲区的增量命令以AOF方式写入文件. +
+写入完成后, 新的AOF文件替换旧的AOF文件 +
+新的AOF文件, 前半段是RDB格式的全量数据, 后半段是AOF格式的增量数据
 - 如何使用AOP注解
+. 自定义注解
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/aop/MyAnnotation.java[lines=11..14]
+----
+.. `@Target`注解可作用类型
+.. `@Retention`保留生命周期
+. 自定义切面
+.. `@Aspect`标记为切面类
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/aop/MyAspect.java[lines=16..18]
+----
+.. 切点
+... 匹配类和方法签名
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/aop/MyAspect.java[lines=20..21]
+----
+... 匹配注解
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/aop/MyAspect.java[lines=23..24]
+----
+.. 通知类型
+... `@Around`环绕通知
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/aop/MyAspect.java[lines=26..31]
+----
+... `@Before`前置通知
+.... 可以修改方法调用参数
+... `@After`后置通知
+.... 可以修改方法的返回值和异常处理
+... `@AfterReturning`方法正常返回时通知
++
+[source,java]
+----
+// 设置注解参数returning, 获取返回值
+@AfterReturning(pointcut="execution(* com.rh.code.aop.*.*(..))", returning="rvt")
+public void log(Object rvt){
+----
+.... 只匹配指定类型的参数
+.... 无法修改返回值
+... `@AfterThrowing`方法抛异常时通知
++
+[source,java]
+----
+// 设置注解参数throwing, 获取返回值
+@AfterThrowing(pointcut="execution(* com.rh.code.aop.*.*(..))", throwing="ex")
+public void log(Throwable ex){
+----
+.... 只匹配指定类型的异常
+.... 无法处理异常
 - 一个入口用几个nginx
 - mq都用来干什么了
+. 异步处理不需要返回给用户的, 且允许有延迟的操作. 更快的响应用户
+. 数据修改时, 通知其他服务同步数据. 业务逻辑解耦, 使代码更加易于维护和拓展
 - sql优化
+. 复合索引
+. mysql，where条件执行顺序是 从左往右，自上而下 +
+. 避免隐式计算
+orcale，where条件执行顺序是从右往左，自下而上
 - oracle和mysql区别
+. mysql免费, oracle付费
+. mysql分页使用limit关键字, oracle使用rownum字段在where条件中判断
+. mysql支持主键自增, oracle主键一般使用序列
+. oracle字符串只能用单引号
+. mysql在linux下区分大小写, oracle不区分大小写
+
+
+
+
+
+
+
+
+
+
+
+
