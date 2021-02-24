@@ -3,7 +3,13 @@
 
 
 - 折半搜索法
-- `string.contcat("1")`
++
+[source,java]
+----
+include::../../maven/src/main/java/com/rh/code/algorithm/BinarySearch.java[lines=8..24]
+----
+- `string.concat("1")`
+. 字符串拼接, 等效于`string + "1"`
 - hash表理解, hash表是什么
 - mybatis插件分页原理
 - `group by`在什么情况下会失败, 使用时要注意什么?
