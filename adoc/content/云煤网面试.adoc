@@ -11,9 +11,19 @@ include::../../maven/src/main/java/com/rh/code/algorithm/BinarySearch.java[lines
 - `string.concat("1")`
 . 字符串拼接, 等效于`string + "1"`
 - hash表理解, hash表是什么
+. 查询时, 通过对元素的哈希计算得到元素在数组中的位置, 查询效率高
+. 哈希函数要求
+.. 接受一个单一的参数, 这个参数可以是任何类型, 但只能是一个
+.. 返回一个整型值(一般情况)
+.. 不抛出异常
+.. 对于两个相同的输入, 输出必须是相同的
+.. 对于两个不同的输入, 输出相同的概率需做到非常小
+.. hash的计算不能过于复杂, 时间负责度尽可能的低
+. 哈希冲突
+.. 在HashMap中使用`拉链法`解决哈希冲突. 哈希值相同的不同元素, 在数组指定索引处以链表的方式存储
 - mybatis插件分页原理
 - `group by`在什么情况下会失败, 使用时要注意什么?
--- 在group by子句中的字段, 可以直接出现在select子句中 +
+. 在group by子句中的字段, 可以直接出现在select子句中 +
 在group by子句未出现的字段, 在select子句中只能出现在分组函数中
 - springboot和spring有什么区别
 - yaml和properent那个优先级高
