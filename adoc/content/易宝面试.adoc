@@ -5,16 +5,31 @@
 
 - 多线程通讯方式
 . synchronized与wait&notify
+. 重入锁, 读写锁, 信号量, CountDownLatch, CyclicBarrier
 - syn与lock锁区别
+. syn只能在包裹的代码块里使线程等待和唤醒 +
+lock提供了`lock()`和`unlock()`更加灵活
+. syn的`notifyAll()`会唤醒一个锁的所有等待线程 +
+lock可以创建多个`Condition`, 分组唤醒同一个锁的等待线程
 - `left join`和`right join`区别
-- spring bean生命周期
+. `left join`保留左表所有数据, 关联右表满足条件的数据
+- springBean生命周期
 - 用过的设计模式
+. 单例模式
+. 工厂模式
+. 构建者模式
+. 代理模式
 - redis三大问题
+. 缓存穿透
+. 缓存雪崩
+. 缓存击穿
 - redis如何保证和数据库的数据同步(一致)
 - redis单线程为何能承受高并发请求
 - 开闭原则
-- _kafka,rabbit,rocket_ 有啥区别
+- _kafka/rabbit/rocket_ 有啥区别
 - sleep和wait有啥区别
+. sleep必须指定时间, wait不需要
+. sleep不释放锁, wait释放锁
 - springboot常用注解
 - gc算法
 - 如何让hashmap不参与gc
