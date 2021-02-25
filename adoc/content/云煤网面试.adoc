@@ -142,15 +142,3 @@ orcale，where条件执行顺序是从右往左，自下而上
 . mysql支持主键自增, oracle主键一般使用序列
 . oracle字符串只能用单引号
 . mysql在linux下区分大小写, oracle不区分大小写
-
-
-
-
-
-
-
-
-
-
-
-
