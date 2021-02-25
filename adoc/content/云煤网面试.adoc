@@ -21,7 +21,7 @@ include::../../maven/src/main/java/com/rh/code/algorithm/BinarySearch.java[lines
 .. hash的计算不能过于复杂, 时间负责度尽可能的低
 . 哈希冲突
 .. 在HashMap中使用`拉链法`解决哈希冲突. 哈希值相同的不同元素, 在数组指定索引处以链表的方式存储
-- mybatis插件分页原理
+- mybatis插件分页原理 // todo
 - `group by`在什么情况下会失败, 使用时要注意什么?
 . 在group by子句中的字段, 可以直接出现在select子句中 +
 在group by子句未出现的字段, 在select子句中只能出现在分组函数中
@@ -131,7 +131,7 @@ public void log(Throwable ex){
 - mq都用来干什么了
 . 异步处理不需要返回给用户的, 且允许有延迟的操作. 更快的响应用户
 . 数据修改时, 通知其他服务同步数据. 业务逻辑解耦, 使代码更加易于维护和拓展
-- sql优化
+- sql优化 // todo
 . 复合索引
 . mysql，where条件执行顺序是 从左往右，自上而下 +
 . 避免隐式计算

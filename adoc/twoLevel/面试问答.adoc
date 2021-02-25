@@ -15,4 +15,3 @@ include::../content/易宝面试.adoc[]
 
 include::../content/北京某公司20190313.adoc[]
 
-include::../content/杭州面试.adoc[]

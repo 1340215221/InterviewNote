@@ -40,7 +40,7 @@ include::../../maven/src/main/java/com/rh/code/design/singleton/EnumWay.java[lin
 .. 子叶节点用指针连成一个链表 +
 遍历所有的子叶节点, 就可以遍历到所有的数据, 也方便查询一个区域的数据
 - 反射原理
-- ConcurrentHashMap1.7和1.8的区别
+- ConcurrentHashMap1.7和1.8的区别 // todo
 - HashMap在并发扩容时为什么会死循环
 . HashMap在扩容时会重新设置节点指向关系, 多线程同时设置节点指向关系时相互影响, 造成有些节点连成一个环形链表
 . tip

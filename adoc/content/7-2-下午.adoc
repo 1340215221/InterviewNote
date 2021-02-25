@@ -1,5 +1,6 @@
 
 === 7-2-下午
+// todo
 
 
 - token如何让它过期
@@ -12,13 +13,13 @@
 - mongodb如何实现连表
 +
 .用户表
-[source,mongodb]
+[source,js]
 ----
 include::../../maven/src/main/java/com/rh/code/mongo/query/lookup.js[lines=2..12]
 ----
 +
 .订单表
-[source,mongodb]
+[source,js]
 ----
 include::../../maven/src/main/java/com/rh/code/mongo/query/lookup.js[lines=15..35]
 ----
@@ -30,7 +31,7 @@ include::../../maven/src/main/java/com/rh/code/mongo/query/lookup.js[lines=38..4
 ----
 +
 .连表结果
-[source,mongodb]
+[source,js]
 ----
 include::../../maven/src/main/java/com/rh/code/mongo/query/lookup.js[lines=48..80]
 ----
