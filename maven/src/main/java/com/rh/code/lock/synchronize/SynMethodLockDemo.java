@@ -1,7 +1,7 @@
 package com.rh.code.lock.synchronize;
 
 /**
- * 测试Synchronized加锁方式, 执行顺序
+ * 使用Synchronized被同一把锁的加锁的代码块, 都需要等待抢占到该锁才能执行
  */
 public class SynMethodLockDemo {
 
