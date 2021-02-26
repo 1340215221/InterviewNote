@@ -3,11 +3,11 @@
 == Java基础
 
 
-=== Java特性
+=== 语言基础
 
-include::../content/Java基本特性.adoc[]
 
-include::../content/接口与抽象类的区别.adoc[]
+==== 基础语法
+
 
 include::../content/基本类型.adoc[]
 
@@ -17,10 +17,13 @@ include::../content/try自动关闭资源.adoc[]
 
 include::../content/String.adoc[]
 
-include::../content/泛型.adoc[]
+// 面对对象 //
+include::../content/面对对象.adoc[]
 
+// 接口 //
+include::../content/接口.adoc[]
 
-=== 容器
+==== 容器
 
 
 include::../content/ArrayList.adoc[]
@@ -40,25 +43,64 @@ include::../content/ConcurrentHashMap.adoc[]
 include::../content/容器对比.adoc[]
 
 
-=== 虚拟机
+==== 异常
+
+// 泛型 //
+include::../content/泛型.adoc[]
+
+==== 反射
+
+==== 注解
+
+==== IO
 
 
-include::../content/内存模型.adoc[]
+===== 序列化
 
-include::../content/多线程并发问题.adoc[]
 
-include::../content/垃圾回收.adoc[]
+==== 图形化 Swing
 
-include::../content/内存溢出问题.adoc[]
 
-include::../content/JVM调优.adoc[]
+=== JVM虚拟机
 
-include::../content/类的加载.adoc[]
+
+include::../content/类加载机制.adoc[]
+
+==== 字节码执行机制
 
 include::../content/对象的创建.adoc[]
 
+include::../content/JVM内存模型.adoc[]
+
+include::../content/GC垃圾回收.adoc[]
+
+==== JVM性能监控与故障定位
+
+
 include::../content/常见异常.adoc[]
 
+include::../content/内存溢出问题.adoc[]
+
+
+include::../content/JVM调优.adoc[]
+
+
+=== 多线程&并发
+
+
+==== 并发编程的基础
+
+
+include::../content/创建线程的方式.adoc[]
+
+===== 语法关键字
+
+include::../content/线程通讯方式.adoc[]
+
+include::../content/多线程并发问题.adoc[]
+
+
+==== 线程池
 
 ==== 锁
 
@@ -72,35 +114,8 @@ include::../content/Synchronized与Volatile的区别.adoc[]
 include::../content/悲观锁.adoc[]
 
 
-=== 多线程和并发
+==== 并发容器
 
+==== 原子类
 
-include::../content/创建线程的方式.adoc[]
-
-include::../content/线程通讯方式.adoc[]
-
-
-//todo
-//读写锁
-//新读写锁(1.8防止写线程饥饿)
-//cas
-//乐观锁与悲观锁
-
-
-=== 队列
-//单容器队列
-//阻塞队列与非阻塞队列
-//有界队列与无界队列
-
-=== 线程
-//创建线程的方式
-//线程通信的方式
-
-=== IO
-=== 反射
-//创建对象的方法
-
-=== 序列化
-//例子
-//序列化相关的方法
-//用途
+==== JUC并发工具

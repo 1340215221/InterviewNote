@@ -1,6 +1,6 @@
 
 
-==== LinkedHashMap
+===== LinkedHashMap
 
 
 . 数据结构是链表和哈希表

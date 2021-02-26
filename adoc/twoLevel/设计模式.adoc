@@ -3,50 +3,6 @@
 == 设计模式
 
 
-=== <HeadFirst设计模式>
-
-
-include::../content/设计模式入门.adoc[]
-
-include::../content/设计原则.adoc[]
-
-include::../content/观察者模式.adoc[]
-
-include::../content/装饰者模式.adoc[]
-
-include::../content/工厂模式.adoc[]
-
-
-=== <重构>
-
-
-include::../content/代码可测性.adoc[]
-
-
-include::../content/基本开发规范.adoc[]
-
-
-include::../content/查询代替临时变量.adoc[]
-
-
-include::../content/内联函数.adoc[]
-
-
-=== <代码大全2>
-
-
-include::../content/信息隐藏.adoc[]
-
-
-include::../content/容易改变的区域.adoc[]
-
-
-include::../content/松耦合.adoc[]
-
-
-include::../content/设计模式的作用.adoc[]
-
-
 === 单例
 
 

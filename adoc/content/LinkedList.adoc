@@ -1,6 +1,6 @@
 
 
-==== LinkedList
+===== LinkedList
 
 
 . 链表结构由于内存不连续, 遍历慢, 增删快

@@ -6,72 +6,61 @@
 === mysql
 
 
-include::../content/三范式.adoc[]
-
-
 ==== sql语句书写
 
-
-==== sql语句优化
-//todo
-//B+ 树索引机制和优化策略
-//数据库锁
-//索引原则
-//分库分表
-
+include::../content/sql语句优化.adoc[]
 
 include::../content/事务和隔离级别.adoc[]
-
 
 ==== 索引
 
 
-==== 高性能mysql
+===== 索引机制
+
+===== 索引类型
 
 
-include::../content/mysql索引.adoc[]
+====== 基础索引
 
-include::../content/性能优化.adoc[]
+====== 唯一索引
 
-include::../content/mysql复制.adoc[]
+====== 复合索引
 
-include::../content/mysql备份与恢复.adoc[]
+====== 主键索引
+
+====== 全文索引
+
+
+==== 锁
 
 
 === mongodb
 
 
-==== 增删改查
+==== 语法
+
+
+===== 基础增删改查
+
+===== 管道
 
 
 include::../content/分组查询.adoc[]
 
 
-==== 与sql区别
+===== MapReduce
 
 
-==== 索引
-
-
-include::../content/_mongo__索引优化.adoc[]
-
-
-==== 查询优化
+include::../content/mongo查询优化.adoc[]
 
 
 ==== 分片
 
+==== 分库分表
 
-==== 集群
+==== 与sql区别
 
-
-==== 备份
-
-
-==== 事务
-
-
-==== 开发中遇到的问题
+==== 实战
 
 
 include::../content/ObjectId在json转化时的问题.adoc[]

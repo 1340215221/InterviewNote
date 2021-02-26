@@ -1,0 +1,270 @@
+
+
+== 后端技术
+
+
+=== Spring家族框架
+
+
+==== Spring
+
+
+===== IoC
+
+===== AOP
+
+
+==== SpringMVC
+
+==== SpringBoot
+
+
+===== 自动配置,开箱即用
+
+
+include::../content/SpringBoot打包部署.adoc[]
+
+
+===== 整合web
+
+===== 整合数据库-事务问题
+
+===== 整合权限
+
+
+====== Shiro
+
+====== Spring Security
+
+
+===== 整合各种中间件
+
+
+====== Redis
+
+====== MQ
+
+====== RPC框架
+
+====== NIO框架
+
+
+======= Netty
+
+
+=== 服务器软件
+
+
+==== Web服务器
+
+
+===== Nginx
+
+
+include::../content/反向代理.adoc[]
+
+include::../content/负载均衡.adoc[]
+
+include::../content/动静分离.adoc[]
+
+====== 高可用
+
+include::../content/匹配规则.adoc[]
+
+
+==== 应用服务器
+
+
+===== Tomcat
+
+===== Jetty
+
+===== Undertow
+
+
+=== 中间件
+
+
+==== 缓存
+
+
+===== Redis
+
+
+include::../content/Redis介绍.adoc[]
+
+include::../content/Redis五大基础类型.adoc[]
+
+====== 应用
+
+
+include::../content/分布式锁.adoc[]
+
+include::../content/Redis计数器.adoc[]
+
+
+====== 事务
+
+====== 普通
+
+====== 持久化
+
+====== 集群
+
+
+==== 消息队列
+
+
+===== RockedMQ
+
+===== RabbitMQ
+
+===== Kafka
+
+
+==== RPC框架
+
+
+===== Dubbo
+
+===== gRPC
+
+===== Thrift
+
+===== Netty
+
+
+=== 数据库架构
+
+
+==== ORM框架
+
+
+===== Mybatis
+
+
+==== 连接池
+
+
+===== Druid
+
+===== C3P0
+
+
+==== 分库分表
+
+
+===== MyCat
+
+===== Sharding-JDBC
+
+
+=== 搜索引擎
+
+
+==== Slor
+
+==== ElasticSearch
+
+
+=== 分布式&微服务
+
+
+==== 服务注册&发现
+
+
+===== Eureka
+
+
+include::../content/Eureka注册中心.adoc[]
+
+include::../content/与Dubbo区别.adoc[]
+
+include::../content/与Zookeeper区别.adoc[]
+
+
+===== Zookeeper
+
+
+==== 网关
+
+
+===== Zuul
+
+
+include::../content/简介Zuul.adoc[]
+
+
+==== 服务调用-负载均衡
+
+
+===== Ribbon
+
+
+include::../content/Ribbon配置负载均衡.adoc[]
+
+include::../content/Ribbon配置重试.adoc[]
+
+
+===== Feign
+
+
+include::../content/Feign接口配置.adoc[]
+
+include::../content/Ribbon与Feign的区别.adoc[]
+
+
+==== 熔断&降级
+
+
+===== Hystrix
+
+
+include::../content/Hystrix简介.adoc[]
+
+include::../content/熔断策略.adoc[]
+
+include::../content/Hystrix熔断过程.adoc[]
+
+
+==== 分布式事务
+
+
+==== 任务调度
+
+
+===== xxl-job
+
+===== Quartz
+
+
+include::../content/属性结构.adoc[]
+
+====== 重复执行的定时任务
+
+====== 带参数定时任务
+
+====== 只执行一次的定时任务
+
+====== 定时任务持久化
+
+==== 链路追踪
+
+
+===== Skywalking
+
+
+=== 工具框架
+
+
+include::../content/Json工具.adoc[]
+
+include::../content/lombok注解.adoc[]
+
+include::../content/mock测试.adoc[]
+
+include::../content/Groovy基础.adoc[]
+
+include::../content/Git.adoc[]
+
+include::../content/github搜索条件.adoc[]

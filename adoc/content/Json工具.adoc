@@ -1,0 +1,38 @@
+
+:java-path: ../../maven/src/main/java/com/rh/code
+
+
+=== Json工具
+
+
+==== Jackson
+
+.对象与json之间转换
+[source%nowrap, java]
+----
+include::{java-path}/json/JsonUtil.java[lines=10..24]
+----
+
+.转换时, 修改属性名
+[source%nowrap, java]
+----
+include::{java-path}/json/User.java[lines=17..21]
+----
+
+.转换时特殊值处理
+[source%nowrap, java]
+----
+1.添加注解
+
+include::{java-path}/json/User.java[lines=11..15]
+
+2.处理逻辑
+
+include::{java-path}/json/JsonBool2Int.java[lines=10..20]
+----
+
+.对象属性扁平化
+[source%nowrap, java]
+----
+include::{java-path}/json/User.java[lines=23..27]
+----
