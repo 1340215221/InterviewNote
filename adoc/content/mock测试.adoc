@@ -3,7 +3,10 @@
 :test-java-path: ../../spring-boot/src/test/java/com/rh/code
 
 
-=== mock测试
+==== mock测试
+
+
+===== Mock
 
 
 .对一个对象或其父类的私有成员变量赋值
@@ -25,7 +28,7 @@ include::{test-java-path}/mock/HandleSuperPrivateField.java[lines=13]
 include::{test-java-path}/mock/HandleSuperPrivateField.java[lines=19..23]
 ----
 
-=== PowerMock
+===== PowerMock
 Mock增强
 
 .抑制父类方法的执行
@@ -40,7 +43,7 @@ include::{test-java-path}/mock/PowerMockitoTest.groovy[lines=16..17]
 include::{test-java-path}/mock/PowerMockitoTest.groovy[lines=49..51]
 ----
 
-=== SpringTest中的Mock
+===== SpringTest中的Mock
 
 .Http请求测试
 [source%nowrap, groovy]
